@@ -3,7 +3,7 @@
 import HomepagHero from "@/components/Hero/HomepageHero";
 import HowWeWorkSection from "@/components/Section/HowWeWorkSection";
 
-export default function Home() {
+export default async function Home() {
   return (
     <main>
       <HomepagHero />
