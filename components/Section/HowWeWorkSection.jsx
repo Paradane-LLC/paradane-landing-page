@@ -70,8 +70,8 @@ const HowWeWorkSection = () => {
             <div className="relative inset-0 bg-gray-50/80 min-h-screen z-10">
                 <ServicesSubHero />
                 <div className="flex flex-col gap-10 max-w-7xl mx-auto w-full pt-72 pb-20 z-20">
-                    <div className="flex items-center justify-between">
-                        <div className="max-w-xs">
+                    <div className="flex items-base justify-between">
+                        <div className="">
                             <span className="text-5xl font-bold text-zinc-900">How We Work<span className="text-[#00489c]">.</span></span>
                         </div>
                         <div className="max-w-xl">
@@ -79,7 +79,7 @@ const HowWeWorkSection = () => {
                         </div>
                     </div>
                     <div className="bg-white/90 backdrop-blur-xs shadow-lg rounded-3xl w-full">
-                        <div className="grid grid-cols-2 gap-20">
+                        <div className="grid grid-cols-2 gap-18">
                             <div className="flex flex-col gap-5 p-8">
                                 <div className="flex flex-col gap-3">
                                     <span className="text-2xl font-semibold text-zinc-700">Our innovative approach</span>
