@@ -37,12 +37,6 @@ const ProcessList = [
     },
     {
         id: 5,
-        label: "Scalability",
-        description: "Ensuring the system is optimized to handle growth, performance demands, and future enhancements without compromising efficiency",
-        icon: TrendingUpIcon
-    },
-    {
-        id: 6,
         label: "Launch and Grow",
         description: "Process of deploying with continuous, functional and optimize way",
         icon: RocketIcon
