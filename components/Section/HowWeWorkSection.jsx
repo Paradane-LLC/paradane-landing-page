@@ -57,8 +57,8 @@ const ListItem = ({id, label, description, icon: Icon}) => {
                     {description}
                 </div>
             </div>
-            <div className="flex items-center justify-center rounded-full bg-zinc-50 min-h-18 min-w-18">
-                <Icon className="text-[#00489c]" size={28} />
+            <div className="flex items-center justify-center rounded-full bg-zinc-50/80 group-hover:bg-zinc-50 min-h-18 min-w-18">
+                <Icon className="text-[#00489c]/80 group-hover:text-[#00489c]" size={28} />
             </div>
         </div>
     )
@@ -70,7 +70,7 @@ const HowWeWorkSection = () => {
             <div className="relative inset-0 bg-gray-50/80 min-h-screen z-10">
                 <ServicesSubHero />
                 <div className="flex flex-col gap-10 max-w-7xl mx-auto w-full pt-72 pb-20 z-20">
-                    <div className="flex items-base justify-between">
+                    <div className="flex items-center justify-between">
                         <div className="">
                             <span className="text-5xl font-bold text-zinc-900">How We Work<span className="text-[#00489c]">.</span></span>
                         </div>
