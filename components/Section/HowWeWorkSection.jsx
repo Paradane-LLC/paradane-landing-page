@@ -77,7 +77,7 @@ const HowWeWorkSection = () => {
         <div className="min-h-screen">
             <div className="relative inset-0 bg-gray-50/80 min-h-screen z-10">
                 <ServicesSubHero />
-                <div className="flex flex-col gap-5 max-w-7xl mx-auto w-full pt-72 pb-20 z-20">
+                <div className="flex flex-col gap-10 max-w-7xl mx-auto w-full pt-72 pb-20 z-20">
                     <div className="flex items-center justify-between">
                         <div className="max-w-xs">
                             <span className="text-5xl font-bold text-zinc-900">How We Work<span className="text-[#00489c]">.</span></span>
