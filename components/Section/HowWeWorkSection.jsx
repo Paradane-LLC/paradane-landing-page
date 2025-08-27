@@ -72,7 +72,7 @@ const HowWeWorkSection = () => {
                 <div className="flex flex-col gap-10 max-w-7xl mx-auto w-full pt-72 pb-20 z-20">
                     <div className="flex items-center justify-between">
                         <div className="">
-                            <span className="text-5xl font-bold text-zinc-900">How We Work<span className="text-[#00489c]">.</span></span>
+                            <span className="text-5xl font-bold text-zinc-700">How We Work<span className="text-[#00489c]">.</span></span>
                         </div>
                         <div className="max-w-xl">
                             <span className="text-zinc-700 text-xl tracking-wider">Gain insight into our approach, process, workflows, and methodology when working with clients.</span>

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const LinkItem = ({href, children}) => {
     return (
-        <Link className="text-zinc-800 hover:scale-105 transition-all" href={href}>{children}</Link>
+        <Link className="text-zinc-700 hover:text-black font-semibold hover:scale-105 transition-all" href={href}>{children}</Link>
     )
 }
 
