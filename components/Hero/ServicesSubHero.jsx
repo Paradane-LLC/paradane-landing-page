@@ -7,7 +7,7 @@ import Link from "next/link";
 const ServiceItem = ({label, description, href, icon: Icon}) => {
     return (
         <Link
-            className="flex flex-col gap-3 bg-white rounded-xl px-4 py-3 shadow-lg backdrop-blur cursor-pointer overflow-hidden relative"
+            className="flex flex-col gap-3 bg-white rounded-xl px-4 py-3 shadow-lg backdrop-blur cursor-pointer overflow-hidden relative z-10"
             href={href}
         >
             <div className="flex">
@@ -26,7 +26,7 @@ const ServiceItem = ({label, description, href, icon: Icon}) => {
 
 const ServicesSubHero = () => {
     return (
-        <div className="absolute -top-22 right-0 left-0 flex flex-col gap-5 z-0">
+        <div className="absolute -top-22 right-0 left-0 flex flex-col gap-5 z-10">
             <div className="max-w-7xl mx-auto w-full">
                 <div className="grid grid-cols-4 gap-5" style={{ alignItems: 'start' }}>
                     <ServiceItem href={"#"} label={"Website Development"} description={"We build fast, secure, and scalable websites tailored to your business needs. From simple landing pages to complex platforms, we deliver seamless digital experiences."} icon={Monitor} />
