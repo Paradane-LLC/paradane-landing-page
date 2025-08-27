@@ -6,7 +6,7 @@ import Link from "next/link";
 const ServiceItem = ({label, description, href, icon: Icon}) => {
     return (
         <Link
-            className="flex flex-col gap-3 bg-white rounded-xl px-4 py-3 shadow-lg backdrop-blur cursor-pointer overflow-hidden relative z-10"
+            className="flex flex-col gap-3 bg-white rounded-3xl px-5 py-5 shadow-lg backdrop-blur cursor-pointer overflow-hidden relative z-10"
             href={href}
         >
             <div className="flex">
