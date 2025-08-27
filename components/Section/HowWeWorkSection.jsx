@@ -44,7 +44,7 @@ const ProcessList = [
 const ListItem = ({id, label, description, icon: Icon}) => {
     return (
         <div className="flex gap-5 items-center pb-5 group hover:scale-105 transition-all">
-            <div className="flex flex-col gap-2 grow">
+            <div className="flex flex-col gap-1 grow">
                 <div className="flex items-center gap-2 text-zinc-700 group-hover:text-black text-2xl font-semibold">
                     <div className="select-none">
                         <span>#{id}</span>
