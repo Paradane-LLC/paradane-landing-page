@@ -6,7 +6,6 @@ import {
     PenIcon, 
     SearchIcon, 
     Layers3Icon, 
-    TrendingUpIcon
   } from "lucide-react";
 import HowWeWorkAnimatedSculpture from "@/public/images/how-we-work-animated-sculpture.webp"
 
@@ -45,21 +44,21 @@ const ProcessList = [
 
 const ListItem = ({id, label, description, icon: Icon}) => {
     return (
-        <div className="flex gap-5 items-center pb-5">
+        <div className="flex gap-5 items-center pb-5 group hover:scale-105 transition-all">
             <div className="flex flex-col gap-2 grow">
-                <div className="flex items-center gap-2 text-zinc-700  text-2xl font-semibold">
-                    <div className="">
+                <div className="flex items-center gap-2 text-zinc-700 group-hover:text-black text-2xl font-semibold">
+                    <div className="select-none">
                         <span>#{id}</span>
                     </div>
-                    <div className="">
+                    <div className="select-none">
                         <span>{label}</span>
                     </div>
                 </div>
-                <div className="text-zinc-700 tracking-wider text-lg">
+                <div className="text-zinc-700 group-hover:text-black tracking-wider text-lg select-none">
                     {description}
                 </div>
             </div>
-            <div className="flex items-center justify-center rounded-full bg-zinc-100 min-h-18 min-w-18">
+            <div className="flex items-center justify-center rounded-full bg-zinc-50 min-h-18 min-w-18">
                 <Icon className="text-[#00489c]" size={28} />
             </div>
         </div>
@@ -85,7 +84,7 @@ const HowWeWorkSection = () => {
                             <div className="flex flex-col gap-5 p-8">
                                 <div className="flex flex-col gap-3">
                                     <span className="text-2xl font-semibold text-zinc-700">Our innovative approach</span>
-                                    <span className="text-lg text-zinc-700">Get valuable insights into our innovative approaches, proven strategies, and meticulous methodologies that drive our successful delivery of services and products.</span>
+                                    <span className="text-lg text-zinc-700 tracking-wider">Get valuable insights into our innovative approaches, proven strategies, and meticulous methodologies that drive our successful delivery of services and products.</span>
                                 </div>
                                 <div className="relative w-full h-full">
                                     <Image className="object-contain" src={HowWeWorkAnimatedSculpture} fill />
