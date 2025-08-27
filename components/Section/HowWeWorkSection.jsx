@@ -7,7 +7,7 @@ import {
     SearchIcon, 
     Layers3Icon, 
   } from "lucide-react";
-  
+
 const ProcessList = [
     {
         id: 1,
@@ -86,7 +86,7 @@ const HowWeWorkSection = () => {
                                     <span className="text-lg text-zinc-700 tracking-wider">Get valuable insights into our innovative approaches, proven strategies, and meticulous methodologies that drive our successful delivery of services and products.</span>
                                 </div>
                                 <div className="relative w-full h-full">
-                                    <Image className="object-contain" src="https://cdn.paradane.com/images/how-we-work-animated-sculpture.webp" fill />
+                                    <Image className="object-contain" src="https://cdn.paradane.com/images/how-we-work-animated-sculpture.webp" alt="Animated Image for How We Work Section" fill />
                                 </div>
                             </div>
                             <div className="flex flex-col gap-5 p-8 divide-y divide-zinc-200">
