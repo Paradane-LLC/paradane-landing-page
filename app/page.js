@@ -1,11 +1,11 @@
 import HomepagHero from "@/components/Hero/HomepageHero";
-import TrustedBySection from "@/components/Section/TrustedBySection";
+import HowWeWorkSection from "@/components/Section/HowWeWorkSection";
 
 export default function Home() {
   return (
     <main>
       <HomepagHero />
-      <TrustedBySection />
+      <HowWeWorkSection />
     </main>
   );
 }

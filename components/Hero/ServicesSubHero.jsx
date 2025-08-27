@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from "motion/react"
 import { Monitor, Share2, Palette, Search } from "lucide-react";
 import Link from "next/link";
 
