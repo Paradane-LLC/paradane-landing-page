@@ -1,18 +1,15 @@
 import Image from "next/image"
-import BackgroundHero from "@/public/images/background-homepage-hero.jpg"
 
 const HomepageHero = () => {
     return (
         <div className="relative min-h-screen">
             {/* Background Image with Next.js optimization */}
             <Image
-                src={BackgroundHero}
+                src="https://cdn.paradane.com/images/background-homepage-hero.jpg"
                 alt="Background hero image"
                 fill
                 className="object-cover -z-10 select-none"
-                priority
                 quality={85}
-                placeholder="blur"
             />
             
             {/* Overlay */}
