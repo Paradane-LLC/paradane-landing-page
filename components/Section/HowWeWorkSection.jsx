@@ -11,7 +11,7 @@ const HowWeWorkSection = () => {
                             <span className="text-5xl font-bold text-zinc-700">How We Work<span className="text-[#00489c]">.</span></span>
                         </div>
                         <div className="max-w-xl">
-                            <span className="text-zinc-700 text-xl tracking-widest">Get insight of our approach, process, workflows, and methodology when we work with clients.</span>
+                            <span className="text-zinc-700 text-xl tracking-wider">Gain insight into our approach, process, workflows, and methodology when working with clients.</span>
                         </div>
                     </div>
                     <div className="bg-white/90 backdrop-blur-xs shadow-lg rounded-xl h-96 w-full">
