@@ -1,8 +1,9 @@
+import ServicesSubHero from "../Hero/ServicesSubHero";
+
 const TrustedBySection = () => {
     return (
-        <div className="bg-white min-h-screen">
-            {/* <div className="h-32 bg-[#00489c]" /> */}
-            asd
+        <div className="bg-gray-50 min-h-screen relative">
+            <ServicesSubHero />
         </div>
     )
 }

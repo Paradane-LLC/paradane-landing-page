@@ -2,15 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "@/public/images/logo.svg"
 
-const LinkItem = ({href, children, isPrimary}) => {
+const LinkItem = ({href, children}) => {
     return (
-        <Link className="text-white aria-primary:text-[#00489c] aria-primary:px-2 aria-primary:py-1 aria-primary:rounded-lg aria-primary:font-semibold aria-primary:bg-white hover:scale-105 hover:border-b-white border-b border-b-transparent transition-all" aria-primary={isPrimary ? "true" : "false"} href={href}>{children}</Link>
+        <Link className="text-zinc-800 hover:scale-105 hover:border-b-white border-b border-b-transparent transition-all" href={href}>{children}</Link>
     )
 }
 
 const Header = () => {
     return (
-        <header className="text-white/80 fixed left-0 right-0 h-20 z-50 backdrop-blur-xl">
+        <header className="bg-zinc-50 max-w-7xl mx-auto rounded-xl px-10 mt-5 fixed left-0 right-0 h-20 z-50">
             <div className="flex justify-between items-center max-w-7xl mx-auto">
                 <div className="flex gap-10 items-center">
                     <div className="h-20 relative w-36">
@@ -26,7 +26,7 @@ const Header = () => {
                 <div className="flex gap-5 items-center text-sm">
                     <LinkItem href="#">Careers</LinkItem>
                     <LinkItem href="#">Legal</LinkItem>
-                    <LinkItem href="#" isPrimary>Book a Call</LinkItem>
+                    <LinkItem href="#">Book a Call</LinkItem>
                 </div>
             </div>
         </header>
