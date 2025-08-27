@@ -14,7 +14,7 @@ const Header = () => {
             <div className="flex justify-between items-center max-w-7xl mx-auto">
                 <div className="flex gap-10 items-center">
                     <Link href="/" className="h-20 relative w-36">
-                        <Image src={Logo} fill />
+                        <Image src={Logo} alt="Paradane Logo" fill />
                     </Link>
                     <div className="flex gap-5 items-center text-sm">
                         <LinkItem href="#">Services</LinkItem>
