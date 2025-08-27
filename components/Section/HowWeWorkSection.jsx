@@ -14,7 +14,7 @@ const HowWeWorkSection = () => {
                             <span className="text-zinc-700 text-xl tracking-widest">Get insight of our approach, process, workflows, and methodology when we work with clients.</span>
                         </div>
                     </div>
-                    <div className="bg-white/90 backdrop-blur-xs shadow rounded-xl h-96 w-full">
+                    <div className="bg-white/90 backdrop-blur-xs shadow-lg rounded-xl h-96 w-full">
 
                     </div>
                 </div>

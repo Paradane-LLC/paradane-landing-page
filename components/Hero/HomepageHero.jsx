@@ -21,9 +21,9 @@ const HomepageHero = () => {
                     <div className="-mt-[80px]">
                         <div className="flex flex-col gap-8 w-2xl">
                             <div className="flex flex-col">
-                                <span className="text-6xl text-white/80">
+                                <span className="text-6xl font-semibold text-white/80">
                                     We engineer intelligent & modern software for{" "}
-                                    <span className="font-semibold text-white">the digital era</span>.
+                                    <span className="font-bold text-white">the digital era</span>.
                                 </span>
                             </div>
                             <button className="relative hover:scale-105 text-xl text-[#00489c] font-semibold bg-white px-5 py-2 rounded-lg max-w-fit cursor-pointer transition-all z-10">
