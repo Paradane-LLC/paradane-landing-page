@@ -59,7 +59,7 @@ const ListItem = ({id, label, description, icon: Icon}) => {
                         <span>{label}</span>
                     </div>
                 </div>
-                <div className="text-zinc-500 tracking-wider text-lg">
+                <div className="text-zinc-700 tracking-wider text-lg">
                     {description}
                 </div>
             </div>
@@ -88,7 +88,7 @@ const HowWeWorkSection = () => {
                         <div className="grid grid-cols-2 gap-20">
                             <div className="flex flex-col gap-3 p-8">
                                 <span className="text-2xl font-semibold text-zinc-700">Our innovative approach</span>
-                                <span className="text-lg text-zinc-500">Get valuable insights into our innovative approaches, proven strategies, and meticulous methodologies that drive our successful delivery of services and products.</span>
+                                <span className="text-lg text-zinc-700">Get valuable insights into our innovative approaches, proven strategies, and meticulous methodologies that drive our successful delivery of services and products.</span>
                             </div>
                             <div className="flex flex-col gap-5 p-8 divide-y divide-zinc-200">
                                 {ProcessList.map((item) => (
