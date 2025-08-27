@@ -15,7 +15,10 @@ const firaMono = Fira_Mono({
 });
 
 export const metadata = {
-  title: "Paradane | Custom Software Development & Digital Solutions",
+  title: {
+    default: 'Paradane | Custom Software Development & Digital Solutions',
+    template: '%s | Paradane'
+  },
   description: "Paradane is a software development company delivering cutting-edge web, mobile, and AI-powered solutions. We help businesses innovate with custom applications, UI/UX design, and digital transformation services tailored to their needs.",
 };
 
