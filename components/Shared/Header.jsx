@@ -10,7 +10,7 @@ const LinkItem = ({href, children}) => {
 
 const Header = () => {
     return (
-        <header className="bg-white/90 backdrop-blur shadow-lg max-w-7xl mx-auto rounded-3xl px-10 mt-5 fixed left-0 right-0 h-20 z-50">
+        <header className="bg-white/90 border border-[#00489c]/10 backdrop-blur shadow-lg max-w-7xl mx-auto rounded-3xl px-10 mt-5 fixed left-0 right-0 h-20 z-50">
             <div className="flex justify-between items-center max-w-7xl mx-auto">
                 <div className="flex gap-10 items-center">
                     <Link href="/" className="h-20 relative w-36">

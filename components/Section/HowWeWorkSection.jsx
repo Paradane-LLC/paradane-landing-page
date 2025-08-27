@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ServicesSubHero from "../Hero/ServicesSubHero";
 import { 
     Code2Icon, 
@@ -7,6 +8,7 @@ import {
     Layers3Icon, 
     TrendingUpIcon
   } from "lucide-react";
+import HowWeWorkAnimatedSculpture from "@/public/images/how-we-work-animated-sculpture.webp"
 
 const ProcessList = [
     {
@@ -86,9 +88,14 @@ const HowWeWorkSection = () => {
                     </div>
                     <div className="bg-white/90 backdrop-blur-xs shadow-lg rounded-3xl w-full">
                         <div className="grid grid-cols-2 gap-20">
-                            <div className="flex flex-col gap-3 p-8">
-                                <span className="text-2xl font-semibold text-zinc-700">Our innovative approach</span>
-                                <span className="text-lg text-zinc-700">Get valuable insights into our innovative approaches, proven strategies, and meticulous methodologies that drive our successful delivery of services and products.</span>
+                            <div className="flex flex-col gap-5 p-8">
+                                <div className="flex flex-col gap-3">
+                                    <span className="text-2xl font-semibold text-zinc-700">Our innovative approach</span>
+                                    <span className="text-lg text-zinc-700">Get valuable insights into our innovative approaches, proven strategies, and meticulous methodologies that drive our successful delivery of services and products.</span>
+                                </div>
+                                <div className="relative w-full h-full">
+                                    <Image className="object-contain" src={HowWeWorkAnimatedSculpture} fill />
+                                </div>
                             </div>
                             <div className="flex flex-col gap-5 p-8 divide-y divide-zinc-200">
                                 {ProcessList.map((item) => (
