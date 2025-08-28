@@ -44,7 +44,7 @@ const ProcessList = [
 const ListItem = ({id, label, description, icon: Icon}) => {
     return (
         <div className="flex gap-5 items-center pb-5 group hover:scale-105 transition-all">
-            <div className="flex flex-col gap-2 grow">
+            <div className="flex flex-col gap-1 grow">
                 <div className="flex items-center gap-2 text-zinc-700 group-hover:text-black text-2xl font-semibold">
                     <div className="select-none">
                         <span>#{id}</span>
@@ -57,8 +57,8 @@ const ListItem = ({id, label, description, icon: Icon}) => {
                     {description}
                 </div>
             </div>
-            <div className="flex items-center justify-center rounded-full bg-zinc-50 min-h-18 min-w-18">
-                <Icon className="text-[#00489c]" size={28} />
+            <div className="flex items-center justify-center rounded-full bg-zinc-50/80 group-hover:bg-zinc-50 min-h-18 min-w-18">
+                <Icon className="text-[#00489c]/80 group-hover:text-[#00489c]" size={28} />
             </div>
         </div>
     )
@@ -71,15 +71,15 @@ const HowWeWorkSection = () => {
                 <ServicesSubHero />
                 <div className="flex flex-col gap-10 max-w-7xl mx-auto w-full pt-72 pb-20 z-20">
                     <div className="flex items-center justify-between">
-                        <div className="max-w-xs">
-                            <span className="text-5xl font-bold text-zinc-900">How We Work<span className="text-[#00489c]">.</span></span>
+                        <div className="">
+                            <span className="text-5xl font-bold text-zinc-700">How We Work<span className="text-[#00489c]">.</span></span>
                         </div>
                         <div className="max-w-xl">
                             <span className="text-zinc-700 text-xl tracking-wider">Gain insight into our approach, process, workflows, and methodology when working with clients.</span>
                         </div>
                     </div>
                     <div className="bg-white/90 backdrop-blur-xs shadow-lg rounded-3xl w-full">
-                        <div className="grid grid-cols-2 gap-20">
+                        <div className="grid grid-cols-2 gap-18">
                             <div className="flex flex-col gap-5 p-8">
                                 <div className="flex flex-col gap-3">
                                     <span className="text-2xl font-semibold text-zinc-700">Our innovative approach</span>

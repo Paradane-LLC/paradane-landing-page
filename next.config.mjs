@@ -17,6 +17,7 @@ const nextConfig = {
     experimental: {
         inlineCss: true,
         useLightningcss: true,
+        useCache: true,
     },
   }
 
