@@ -18,23 +18,25 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed z-50 mt-3 left-0 right-0 mx-2 sm:mx-6 lg:mx-24 box-border">
-      <div className="bg-white/90 border border-[#00489c]/10 backdrop-blur shadow-lg rounded-3xl px-4 sm:px-10 h-16 md:h-20 w-full flex items-center justify-between box-border">
-        <Link href="/" className="relative w-32 h-12 flex-shrink-0">
-          <Image
-            src="https://cdn.paradane.com/images/logo.svg"
-            alt="Paradane Logo"
-            fill
-            className="object-contain"
-          />
-        </Link>
+    <header className="fixed z-50 mt-3 md:mt-5 left-0 right-0 mx-2 sm:mx-6 box-border">
+      <div className="bg-white/90 max-w-7xl mx-auto text-sm border border-[#00489c]/10 backdrop-blur shadow-lg rounded-3xl px-4 sm:px-10 h-16 md:h-20 w-full flex items-center justify-between box-border">
+        <div className="flex items-center gap-10 ">
+            <Link href="/" className="relative w-28 md:w-32 h-12 flex-shrink-0">
+                <Image
+                    src="https://cdn.paradane.com/images/logo.svg"
+                    alt="Paradane Logo"
+                    fill
+                    className="object-contain"
+                />
+            </Link>
+            <div className="hidden sm:flex gap-5 items-center">
+                <LinkItem href="#">Services</LinkItem>
+                <LinkItem href="#">Portfolio</LinkItem>
+                <LinkItem href="#">Contact</LinkItem>
+            </div>
+        </div>
 
-        <div className="hidden md:flex gap-10 items-center text-sm">
-          <div className="flex gap-5 items-center">
-            <LinkItem href="#">Services</LinkItem>
-            <LinkItem href="#">Portfolio</LinkItem>
-            <LinkItem href="#">Contact</LinkItem>
-          </div>
+        <div className="hidden md:flex gap-10 items-center">
           <div className="flex gap-5 items-center">
             <LinkItem href="#">Legal</LinkItem>
             <LinkItem href="#">Book a Call</LinkItem>
@@ -43,7 +45,7 @@ const Header = () => {
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden p-2 rounded-lg hover:bg-zinc-100 transition"
+          className="md:hidden rounded-lg transition"
         >
           {!menuOpen && (
             <svg
