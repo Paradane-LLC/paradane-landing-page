@@ -19,7 +19,7 @@ function WidgetProvider() {
               right: 20,
               bottom: 20,
               size: 64,
-              dragAndDrop: true,
+              dragAndDrop: false,
               iconColor: 'white',
             },
             tooltip: {
@@ -31,8 +31,8 @@ function WidgetProvider() {
             },
             chatWindow: {
                 showTitle: true,
-                title: 'Paradane AI Chatbot',
-                welcomeMessage: '',
+                title: 'AI Chatbot',
+                welcomeMessage: 'Hello, what would you like to ask?',
                 height: 500,
                 width: 400,
                 starterPrompts: ['What services do you provide?', 'How can I contact to get started?'],
