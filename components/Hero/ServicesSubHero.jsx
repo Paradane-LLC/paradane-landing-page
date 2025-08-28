@@ -13,9 +13,9 @@ const ServiceItem = ({label, description, href, icon: Icon}) => {
                 <Icon className="text-3xl text-[#00489c]/80 group-hover:text-[#00489c]" size={24} />
             </div>
             <span className="text-xl font-semibold text-zinc-700 group-hover:text-black flex-shrink-0">{label}</span>
-            <span className="text-base text-zinc-700 group-hover:text-black block mt-2 tracking-wider">
+            <p className="text-base text-zinc-700 group-hover:text-black mt-2 tracking-wider line-clamp-3">
                 {description}
-            </span>
+            </p>
             <span className="text-zinc-700 group-hover:text-black block mt-2 text-lg">
                 Learn More
             </span>
