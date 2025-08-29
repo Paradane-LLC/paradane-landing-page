@@ -14,11 +14,11 @@ const HomepageHero = () => {
             
             {/* Overlay */}
             <div className="absolute inset-0 bg-[#00489c]/80 text-white min-h-screen flex items-center z-10">
-                <div className="max-w-7xl mx-auto w-full">
+                <div className="max-w-7xl mx-auto w-full px-4">
                     <div className="-mt-[80px]">
-                        <div className="flex flex-col gap-8 w-2xl">
+                        <div className="flex flex-col gap-8 max-w-2xl w-full">
                             <div className="flex flex-col">
-                                <span className="text-6xl font-semibold text-white/80">
+                                <span className="text-3xl sm:text-6xl font-semibold text-white/80">
                                     We engineer intelligent & modern software for{" "}
                                     <span className="font-bold text-white">the digital era</span>.
                                 </span>
@@ -32,7 +32,7 @@ const HomepageHero = () => {
                 </div>
             </div>
             
-            <div className="absolute left-0 right-0 bottom-32 max-w-7xl mx-auto w-full z-10">
+            <div className="absolute left-0 right-0 bottom-32 max-w-7xl mx-auto w-full z-10 px-4">
                 <div className="text-white font-semibold text-4xl">
                     Trusted by thousands to design solutions for complex business challenges.
                 </div>
