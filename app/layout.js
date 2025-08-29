@@ -1,6 +1,7 @@
 import { Fira_Sans, Fira_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Shared/Header";
+import WidgetProvider from "@/components/Shared/WidgetProvider";
 
 const firaSans = Fira_Sans({
   variable: "--font-fira-sans",
@@ -15,7 +16,10 @@ const firaMono = Fira_Mono({
 });
 
 export const metadata = {
-  title: "Paradane | Custom Software Development & Digital Solutions",
+  title: {
+    default: 'Paradane | Custom Software Development & Digital Solutions',
+    template: '%s | Paradane'
+  },
   description: "Paradane is a software development company delivering cutting-edge web, mobile, and AI-powered solutions. We help businesses innovate with custom applications, UI/UX design, and digital transformation services tailored to their needs.",
 };
 
@@ -27,6 +31,7 @@ export default function RootLayout({ children }) {
       >
         <Header />
         {children}
+        <WidgetProvider />
       </body>
     </html>
   );
