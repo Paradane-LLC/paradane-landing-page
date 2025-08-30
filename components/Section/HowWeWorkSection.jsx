@@ -17,7 +17,7 @@ const ProcessList = [
     },
     {
         id: 2,
-        label: "Wireframe and Prototype",
+        label: "Prototype",
         description: "Creating a design blueprint for an early preview of the final visual aesthetics",
         icon: Layers3Icon
     },
@@ -35,7 +35,7 @@ const ProcessList = [
     },
     {
         id: 5,
-        label: "Launch and Grow",
+        label: "Launch",
         description: "Process of deploying with continuous, functional and optimize way",
         icon: RocketIcon
     },
