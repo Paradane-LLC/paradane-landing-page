@@ -25,7 +25,7 @@ const ServiceItem = ({label, description, href, icon: Icon}) => {
 
 const ServicesSubHero = () => {
     return (
-        <div className="absolute -top-28 xl:-top-22 right-0 left-0 flex flex-col gap-5 z-10">
+        <div className="absolute -top-26 xl:-top-22 right-0 left-0 flex flex-col gap-5 z-10">
             <div className="max-w-7xl mx-auto w-full h-full">
                 <div className="flex xl:mx-0 xl:grid xl:grid-cols-4 sm:gap-5 px-0 sm:px-6 xl:px-0 overflow-x-scroll xl:overflow-visible no-scrollbar" style={{ alignItems: 'start' }}>
                     <ServiceItem href={"#"} label={"Website Development"} description={"We build fast, secure, and scalable websites tailored to your business needs. From simple landing pages to complex platforms, we deliver seamless experiences."} icon={Monitor} />
