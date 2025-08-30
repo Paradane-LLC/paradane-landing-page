@@ -25,7 +25,7 @@ const HomepageHero = () => {
                             </div>
                             <button className="relative hover:scale-105 text-xl text-[#00489c] font-semibold bg-white px-5 py-2 rounded-lg max-w-fit cursor-pointer transition-all z-10">
                                 <div className="absolute inset-0 bg-white scale-60 -z-10 animate-ping rounded-lg" />
-                                Book a Call
+                                Schedule a Call
                             </button>
                         </div>
                     </div>

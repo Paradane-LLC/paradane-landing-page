@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import ScheduleCallModal from "./ScheduleCallModal";
 
 const LinkItem = ({ href, children }) => {
   return (
@@ -16,6 +17,7 @@ const LinkItem = ({ href, children }) => {
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <header className="fixed z-50 mt-3 md:mt-5 left-0 right-0 mx-2 sm:mx-6 box-border">
@@ -39,8 +41,12 @@ const Header = () => {
         <div className="hidden md:flex gap-10 items-center">
           <div className="flex gap-5 items-center">
             <LinkItem href="#">Legal</LinkItem>
-            <LinkItem href="#">Book a Call</LinkItem>
+            <button
+              className="text-zinc-800 hover:scale-105 transition-all block"
+              onClick={() => setModalOpen(true)}
+            >Schedule a Call</button>
           </div>
+          <ScheduleCallModal open={modalOpen} onClose={() => setModalOpen(false)} />
         </div>
 
         <button

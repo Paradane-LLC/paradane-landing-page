@@ -12,11 +12,13 @@
   },
   "dependencies": {
     "@cloudflare/next-on-pages": "^1.13.14",
+    "date-fns": "^4.1.0",
     "flowise-embed": "^3.0.3",
     "lucide-react": "^0.542.0",
     "motion": "^12.23.12",
     "next": "15.5.0",
     "react": "19.1.0",
+    "react-datepicker": "^8.7.0",
     "react-dom": "19.1.0"
   },
   "devDependencies": {
