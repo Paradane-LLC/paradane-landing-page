@@ -2,6 +2,9 @@ import React, { useRef, useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+// Adding this import due to render modal properly
+import { createPortal } from "react-dom";
+
 function ScheduleMeetingModal({ open, onClose }) {
   const services = [
     { id: 1, name: "Website Development" },
@@ -54,8 +57,8 @@ function ScheduleMeetingModal({ open, onClose }) {
   }, [open, onClose]);
 
   if (!open) return null;
-  return (
-    <div className="fixed inset-0 mt-100 z-50 flex items-center justify-center bg-black/40">
+  return createPortal(
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-[2px]">
       <div
         ref={modalRef}
         className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md relative"
@@ -216,7 +219,8 @@ function ScheduleMeetingModal({ open, onClose }) {
           </div>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 

@@ -1,10 +1,16 @@
 "use client";
 import Image from "next/image"
+import { useState } from "react";
 import ScheduleMeetingModal from "../Shared/ScheduleMeetingModal";
 
 const HomepageHero = () => {
+
+    const [menuOpen, setMenuOpen ] = useState(false);
+    const [modalOpen, setModalOpen ] = useState(false);
+
     return (
         <div className="relative min-h-screen">
+            <ScheduleMeetingModal open={modalOpen} onClose={() => setModalOpen(false)} />
             {/* Background Image with Next.js optimization */}
             <Image
                 src="https://cdn.paradane.com/images/background-homepage-hero.jpg"
@@ -23,7 +29,9 @@ const HomepageHero = () => {
                                 We engineer intelligent & modern software for{" "}
                                 <span className="font-bold text-white">the digital era</span>.
                             </span>
-                            <button className="relative hover:scale-105 text-base xl:text-xl text-[#00489c] font-semibold bg-white px-5 py-2 rounded-xl max-w-fit cursor-pointer transition-all z-10">
+                            <button className="relative hover:scale-105 text-base xl:text-xl text-[#00489c] font-semibold bg-white px-5 py-2 rounded-xl max-w-fit cursor-pointer transition-all z-10"
+                                onClick={() => setModalOpen(true)}
+                            >
                                 <div className="absolute inset-0 bg-white scale-60 -z-10 animate-ping rounded-xl" />
                                 Schedule a Meeting
                             </button>
