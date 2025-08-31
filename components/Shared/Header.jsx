@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import ScheduleCallModal from "./ScheduleCallModal";
+import ScheduleMeetingModal from "./ScheduleMeetingModal";
 
 const LinkItem = ({ href, children }) => {
   return (
@@ -44,9 +44,9 @@ const Header = () => {
             <button
               className="text-zinc-800 hover:scale-105 transition-all block"
               onClick={() => setModalOpen(true)}
-            >Schedule a Call</button>
+            >Schedule a Meeting</button>
           </div>
-          <ScheduleCallModal open={modalOpen} onClose={() => setModalOpen(false)} />
+          <ScheduleMeetingModal open={modalOpen} onClose={() => setModalOpen(false)} />
         </div>
 
         <button
@@ -96,7 +96,7 @@ const Header = () => {
           <LinkItem href="#">Contact</LinkItem>
           <div className="border-t border-zinc-200 pt-4 space-y-4">
             <LinkItem href="#">Legal</LinkItem>
-            <LinkItem href="#">Book a Call</LinkItem>
+            <LinkItem href="#">Schedule a Meeting</LinkItem>
           </div>
         </div>
       )}

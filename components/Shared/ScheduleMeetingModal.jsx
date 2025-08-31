@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-function ScheduleCallModal({ open, onClose }) {
+function ScheduleMeetingModal({ open, onClose }) {
   const services = [
     { id: 1, name: "Website Development" },
     { id: 2, name: "Social Media Marketing" },
@@ -18,9 +18,20 @@ function ScheduleCallModal({ open, onClose }) {
 
   // persisting fields in form
   const [name, setName] = useState("");
+  const [company, setCompany] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [service, setService] = useState("");
+
+  function resetForm() {
+    setName("");
+    setCompany("");
+    setPhone("");
+    setEmail("");
+    setService("");
+    setSelectedDate(null);
+    setStep(1);
+  }
 
   useEffect(() => {
     if (!open) return;
@@ -44,7 +55,7 @@ function ScheduleCallModal({ open, onClose }) {
 
   if (!open) return null;
   return (
-    <div className="fixed inset-0 mt-90 z-50 flex items-center justify-center bg-black/40">
+    <div className="fixed inset-0 mt-100 z-50 flex items-center justify-center bg-black/40">
       <div
         ref={modalRef}
         className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md relative"
@@ -56,9 +67,11 @@ function ScheduleCallModal({ open, onClose }) {
         >
           &times;
         </button>
-        <h2 className="text-2xl font-bold mb-4 text-zinc-700">
-          Schedule a Call
-        </h2>
+        {step !== 3 && (
+          <h2 className="text-2xl font-bold mb-4 text-zinc-700">
+            Schedule a Meeting
+          </h2>
+        )}
         {step === 1 && (
           <form
             className="flex flex-col gap-4"
@@ -76,7 +89,16 @@ function ScheduleCallModal({ open, onClose }) {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full border rounded-lg py-2 focus:outline-none focus:ring-2 focus:ring-[#00489c]"
+                className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00489c]"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-1">Company</label>
+              <input
+                type="text"
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
+                className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00489c]"
               />
             </div>
             <div>
@@ -88,7 +110,7 @@ function ScheduleCallModal({ open, onClose }) {
                 required
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full border rounded-lg py-2 focus:outline-none focus:ring-2 focus:ring-[#00489c]"
+                className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00489c]"
               />
             </div>
             <div>
@@ -100,7 +122,7 @@ function ScheduleCallModal({ open, onClose }) {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full border rounded-lg py-2 focus:outline-none focus:ring-2 focus:ring-[#00489c]"
+                className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00489c]"
               />
             </div>
             <div>
@@ -111,7 +133,7 @@ function ScheduleCallModal({ open, onClose }) {
                 required
                 value={service}
                 onChange={(e) => setService(e.target.value)}
-                className="w-full border rounded-lg py-2 focus:outline-none focus:ring-2 focus:ring-[#00489c]"
+                className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00489c]"
               >
                 <option value=""></option>
                 {services.map((service) => (
@@ -130,7 +152,7 @@ function ScheduleCallModal({ open, onClose }) {
         {step === 2 && (
           <div className="flex flex-col gap-4">
             <label className="block text-sm font-medium mb-1">
-              Select a Date & Time for your call
+              Select a Date & Time for your Meeting
             </label>
             <DatePicker
               selected={selectedDate}
@@ -144,12 +166,10 @@ function ScheduleCallModal({ open, onClose }) {
             />
             <button
               className="mt-4 bg-[#00489c] text-white font-semibold py-2 rounded-lg hover:bg-[#003366] transition-all"
-              onClick={() => {
-                onClose();
-              }}
               disabled={!selectedDate}
+              onClick={() => setStep(3)}
             >
-              Schedule Meeting
+              Confirm
             </button>
             <button
               className="mt-2 text-zinc-600 hover:text-zinc-800 underline"
@@ -160,17 +180,44 @@ function ScheduleCallModal({ open, onClose }) {
             </button>
           </div>
         )}
-        {/* {step ===3 && (
-          <div>
-            <span></span>
-            <span></span>
-            <button>
-              
+        {step === 3 && (
+          <div className="flex flex-col gap-4 py-4 text-center">
+            <span className="text-3xl text-[#00489c] font-bold">
+              Thank you!
+            </span>
+            <span className="text-zinc-700 text-center">
+              {" "}
+              Your Meeting has been scheduled. <br />
+              We look forward to speaking with you!
+            </span>
+            <span className="text-zinc-700 text-center">
+              <br />
+              Scheduled for: <br />
+              <span className="font-bold text-lg text-[#00489c]">
+                {selectedDate.toLocaleString("en-US", {
+                  weekday: "long",
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                  hour: "numeric",
+                  minute: "2-digit",
+                  timeZoneName: "short",
+                })}
+              </span>
+            </span>
+            <button
+              className="mt-4 bg-[#0489c] text-black border-1 font-semibold py-2 px-6 rounded-lg hover:bg-[#003366] hover:text-white transition-all"
+              onClick={() => {
+                (resetForm(), onClose());
+              }}
+            >
+              Close
             </button>
-        )} */}
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
-export default ScheduleCallModal;
+export default ScheduleMeetingModal;
