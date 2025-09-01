@@ -1,7 +1,7 @@
 import { Fira_Sans, Fira_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Shared/Header";
-import WidgetProvider from "@/components/Shared/WidgetProvider";
+import WidgetProvider from "@/components/providers/WidgetProvider";
 
 const firaSans = Fira_Sans({
   variable: "--font-fira-sans",
