@@ -18,7 +18,7 @@ function WidgetProvider() {
             s.parentNode.insertBefore(g,s);
             g.onload=function(){
             window.chatwootSDK.run({
-                websiteToken: 'piUDZg9xrTfxjPsqQ9bpmLCP',
+                websiteToken: 'Wu5EUVnF5uYf2qwyTFAHCcQz',
                 baseUrl: BASE_URL
             })
             }

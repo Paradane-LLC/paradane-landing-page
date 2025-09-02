@@ -1,13 +1,15 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import BookerModal from "./BookerModal";
+import Logo from "./Logo";
 
 const LinkItem = ({ href, children }) => {
   return (
     <Link
-      className="text-zinc-800 hover:scale-105 transition-all block"
+      className="hover:scale-105 transition-all block"
       href={href}
     >
       {children}
@@ -18,17 +20,26 @@ const LinkItem = ({ href, children }) => {
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const { ref: headerSentinelRef, inView: blackInView } = useInView({
+    threshold: 0,
+    rootMargin: "-80px 0px -100% 0px" // only trigger when header top overlaps section
+  });
+
+  useEffect(() => {
+    const target = document.querySelector(".header-black-dynamic");
+    if (target) {
+      headerSentinelRef(target);
+    }
+  }, [headerSentinelRef]);
+
+  const inverted = blackInView;
+
   return (
-    <header className="fixed z-50 mt-3 md:mt-5 left-0 right-0 mx-2 sm:mx-6 box-border">
-      <div className="bg-white/90 max-w-7xl mx-auto text-sm border border-[#00489c]/10 backdrop-blur shadow-lg rounded-3xl px-4 sm:px-10 h-16 md:h-20 w-full flex items-center justify-between box-border">
+    <header className={`fixed z-50 mt-3 md:mt-5 left-0 right-0 mx-2 sm:mx-6 box-border transition-colors duration-500`}>
+      <div className={`${inverted ? "bg-zinc-800 text-white border-none" : "bg-white/90 text-zinc-800 border"} max-w-7xl mx-auto text-sm border-[#00489c]/10 backdrop-blur shadow-lg rounded-3xl px-4 sm:px-10 h-16 md:h-20 w-full flex items-center justify-between box-border transition-all`}>
         <div className="flex items-center gap-10 ">
-            <Link href="/" className="relative w-28 md:w-32 h-12 flex-shrink-0">
-                <Image
-                    src="https://cdn.paradane.com/images/logo.svg"
-                    alt="Paradane Logo"
-                    fill
-                    className="object-contain"
-                />
+            <Link href="/" className="flex items-center justify-center relative w-28 md:w-32 h-12 flex-shrink-0">
+                <Logo color={inverted ? '#fff' : '#00489c'} />
             </Link>
             <div className="hidden sm:flex gap-5 items-center">
                 <LinkItem href="#">Services</LinkItem>
@@ -51,7 +62,7 @@ const Header = () => {
           {!menuOpen && (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-7 w-7 text-zinc-800"
+              className={`h-7 w-7 ${inverted ? "text-white" : "text-zinc-800"}`}
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -68,7 +79,7 @@ const Header = () => {
           {menuOpen && (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-7 w-7 text-zinc-800"
+              className={`h-7 w-7 ${inverted ? "text-white" : "text-zinc-800"}`}
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -85,11 +96,11 @@ const Header = () => {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden mt-2 bg-white border border-zinc-200 rounded-2xl shadow-lg p-5 space-y-4 text-sm max-w-7xl mx-auto">
+        <div className={`${inverted ? "bg-black text-white border-white" : "bg-white text-zinc-800 border-zinc-200"} md:hidden mt-2 rounded-2xl shadow-lg p-5 space-y-4 text-sm max-w-7xl mx-auto`}>
           <LinkItem href="#">Services</LinkItem>
           <LinkItem href="#">Portfolio</LinkItem>
           <LinkItem href="#">Contact</LinkItem>
-          <div className="border-t border-zinc-200 pt-4 space-y-4">
+          <div className="border-t border-current pt-4 space-y-4">
             <LinkItem href="https://support.paradane.com/hc/faq/en/categories/legal">Legal</LinkItem>
             <LinkItem href="#"><BookerModal /></LinkItem>
           </div>
