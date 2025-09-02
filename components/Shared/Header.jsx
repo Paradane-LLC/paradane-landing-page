@@ -39,7 +39,7 @@ const Header = () => {
 
         <div className="hidden md:flex gap-10 items-center">
           <div className="flex gap-5 items-center">
-            <LinkItem href="#">Legal</LinkItem>
+            <LinkItem href="https://support.paradane.com/hc/faq/en/categories/legal">Legal</LinkItem>
             <LinkItem href="#"><BookerModal /></LinkItem>
           </div>
         </div>
@@ -90,8 +90,8 @@ const Header = () => {
           <LinkItem href="#">Portfolio</LinkItem>
           <LinkItem href="#">Contact</LinkItem>
           <div className="border-t border-zinc-200 pt-4 space-y-4">
-            <LinkItem href="#">Legal</LinkItem>
-            <LinkItem href="#">Book a Call</LinkItem>
+            <LinkItem href="https://support.paradane.com/hc/faq/en/categories/legal">Legal</LinkItem>
+            <LinkItem href="#"><BookerModal /></LinkItem>
           </div>
         </div>
       )}

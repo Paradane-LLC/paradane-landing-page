@@ -2,6 +2,7 @@ import { Fira_Sans, Fira_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Shared/Header";
 import WidgetProvider from "@/components/providers/WidgetProvider";
+import Footer from "@/components/Shared/Footer";
 
 const firaSans = Fira_Sans({
   variable: "--font-fira-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
       >
         <Header />
         {children}
+        <Footer />
         <WidgetProvider />
       </body>
     </html>
