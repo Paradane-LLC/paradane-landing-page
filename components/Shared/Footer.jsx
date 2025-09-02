@@ -47,16 +47,16 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Community Column */}
-          <div>
-            <h3 className="text-white font-semibold mb-4">Community</h3>
-            <ul className="space-y-3">
-              <li><Link href="#" className="text-zinc-50 hover:text-zinc-100 transition-colors text-sm">Community Support</Link></li>
-              <li><Link href="#" className="text-zinc-50 hover:text-zinc-100 transition-colors text-sm">Events</Link></li>
-              <li><Link href="#" className="text-zinc-50 hover:text-zinc-100 transition-colors text-sm">Affiliate Program</Link></li>
-              <li><Link href="#" className="text-zinc-50 hover:text-zinc-100 transition-colors text-sm">Knowledge Bases</Link></li>
-            </ul>
-          </div>
+            {/* Services Column */}
+            <div>
+                <h3 className="text-white font-semibold mb-4">Services</h3>
+                <ul className="space-y-3">
+                <li><Link href="#" className="text-zinc-50 hover:text-zinc-100 transition-colors text-sm">Website Development</Link></li>
+                <li><Link href="#" className="text-zinc-50 hover:text-zinc-100 transition-colors text-sm">Social Media Marketing</Link></li>
+                <li><Link href="#" className="text-zinc-50 hover:text-zinc-100 transition-colors text-sm">User Interface Design</Link></li>
+                <li><Link href="#" className="text-zinc-50 hover:text-zinc-100 transition-colors text-sm">Search Engine Optimization</Link></li>
+                </ul>
+            </div>
 
           <div>
             <h3 className="text-white font-semibold mb-4">Company</h3>
