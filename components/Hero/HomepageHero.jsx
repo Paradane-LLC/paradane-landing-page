@@ -1,4 +1,5 @@
 import Image from "next/image"
+import BookerModal from "../Shared/BookerModal"
 
 const HomepageHero = () => {
     return (
@@ -23,7 +24,7 @@ const HomepageHero = () => {
                             </span>
                             <button className="relative hover:scale-105 text-base xl:text-xl text-[#00489c] font-semibold bg-white px-5 py-2 rounded-xl max-w-fit cursor-pointer transition-all z-10">
                                 <div className="absolute inset-0 bg-white scale-60 -z-10 animate-ping rounded-xl" />
-                                Book a Call
+                                <BookerModal />
                             </button>
                         </div>
                     </div>

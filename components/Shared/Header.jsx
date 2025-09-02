@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import BookerModal from "./BookerModal";
 
 const LinkItem = ({ href, children }) => {
   return (
@@ -39,7 +40,7 @@ const Header = () => {
         <div className="hidden md:flex gap-10 items-center">
           <div className="flex gap-5 items-center">
             <LinkItem href="#">Legal</LinkItem>
-            <LinkItem href="#">Book a Call</LinkItem>
+            <LinkItem href="#"><BookerModal /></LinkItem>
           </div>
         </div>
 
