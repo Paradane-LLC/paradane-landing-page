@@ -3,7 +3,7 @@
 import { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
 
-export default function BookerModal() {
+export default function BookerModal(props) {
 
     useEffect(() => {
         (async function () {
@@ -16,6 +16,6 @@ export default function BookerModal() {
         data-cal-link="team/sales/schedule-a-meeting"
         data-cal-origin="https://schedule.paradane.com"
         data-cal-config='{"layout":"month_view","theme":"light"}'
-    >Schedule a Meeting</span>;
+    >{props.label || `Schedule a Meeting`}</span>;
 };
   
