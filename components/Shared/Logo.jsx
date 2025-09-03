@@ -5,7 +5,7 @@ const Logo = (props) => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="186.18 333.13 651.65 101.75"
     {...props}
-    className={props.class}
+    className={props.className}
   >
     <g
       style={{

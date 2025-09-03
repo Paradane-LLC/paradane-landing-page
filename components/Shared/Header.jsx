@@ -26,13 +26,6 @@ const Header = () => {
     rootMargin: "-80px 0px -100% 0px" // only trigger when header top overlaps section
   });
 
-  useEffect(() => {
-    const target = document.querySelector(".header-black-dynamic");
-    if (target) {
-      headerSentinelRef(target);
-    }
-  }, [headerSentinelRef]);
-
   const inverted = blackInView;
 
   return (
