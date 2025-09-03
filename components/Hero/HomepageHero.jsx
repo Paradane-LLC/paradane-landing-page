@@ -1,5 +1,6 @@
 import Image from "next/image"
 import BookerModal from "../Shared/BookerModal"
+import { PulsatingButton } from "../magicui/pulsating-button"
 
 const HomepageHero = () => {
     return (
@@ -22,10 +23,9 @@ const HomepageHero = () => {
                                 We engineer intelligent & modern software for{" "}
                                 <span className="font-bold text-white">the digital era</span>.
                             </span>
-                            <button className="relative hover:scale-105 text-base xl:text-xl text-[#00489c] font-semibold bg-white px-5 py-2 rounded-xl max-w-fit cursor-pointer transition-all z-10">
-                                <div className="absolute inset-0 bg-white scale-60 -z-10 animate-ping rounded-xl" />
+                            <PulsatingButton className="max-w-fit bg-white text-sm md:text-base text-[#00489c] font-semibold shadow-lg">
                                 <BookerModal />
-                            </button>
+                            </PulsatingButton>
                         </div>
                     </div>
                 </div>

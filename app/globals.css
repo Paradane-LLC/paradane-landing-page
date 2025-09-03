@@ -50,33 +50,38 @@
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-ring: var(--sidebar-ring);
     --animate-line-shadow: line-shadow 15s linear infinite;
+    --animate-marquee: marquee var(--duration) infinite linear;
+    --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+}
+
+@layer utilities {
   @keyframes line-shadow {
-  0% {
-    background-position: 0 0;
-        }
-  100% {
-    background-position: 100% -100%;
-        }
-    }
-  --animate-marquee: marquee var(--duration) infinite linear;
-  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite
-;
+    0% { background-position: 0 0; }
+    100% { background-position: 100% -100%; }
+  }
   @keyframes marquee {
-  from {
-    transform: translateX(0);
-        }
-  to {
-    transform: translateX(calc(-100% - var(--gap)));
-        }
-    }
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-100% - var(--gap))); }
+  }
   @keyframes marquee-vertical {
-  from {
-    transform: translateY(0);
-        }
-  to {
-    transform: translateY(calc(-100% - var(--gap)));
-        }
-    }}
+    from { transform: translateY(0); }
+    to { transform: translateY(calc(-100% - var(--gap))); }
+  }
+  @keyframes pulsating {
+    0% { box-shadow: 0 0 0 0 var(--pulse-color); }
+    70% { box-shadow: 0 0 0 6px transparent; }
+    100% { box-shadow: 0 0 0 0 transparent; }
+  }
+  .animate-pulsating {
+    animation: pulsating var(--duration,1.5s) ease-out infinite;
+  }
+  .animate-marquee {
+    animation: marquee var(--duration, 20s) linear infinite;
+  }
+  .animate-marquee-vertical {
+    animation: marquee-vertical var(--duration, 20s) linear infinite;
+  }
+}
 
 :root {
     --radius: 0.625rem;
