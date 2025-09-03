@@ -3,8 +3,6 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import BookerModal from "./BookerModal";
 import Logo from "./Logo";
-import { AnimatedSubscribeButton } from "@/components/magicui/animated-subscribe-button";
-import { CheckIcon, ChevronRightIcon } from "lucide-react";
 
 const LinkItem = ({ href, children }) => {
   return (
