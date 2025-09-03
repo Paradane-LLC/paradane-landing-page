@@ -67,7 +67,7 @@ const ListItem = ({id, label, description, icon: Icon}) => {
 const HowWeWorkSection = () => {
     return (
         <div className="min-h-screen">
-            <div className="relative inset-0 bg-gray-50/80 min-h-screen z-10">
+            <div className="relative inset-0 bg-white min-h-screen z-10">
                 <ServicesSubHero />
                 <div className="flex flex-col gap-5 xl:gap-10 max-w-7xl px-0 sm:px-6 xl:px-0 lg:mx-auto w-full pt-40 lg:pt-52 pb-20 z-20">
                     <div className="flex items-center justify-between">

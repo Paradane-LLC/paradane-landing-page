@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { useInView } from "react-intersection-observer";
 import BookerModal from "./BookerModal";
 import Logo from "./Logo";
 import { AnimatedSubscribeButton } from "@/components/magicui/animated-subscribe-button";
@@ -20,13 +19,18 @@ const LinkItem = ({ href, children }) => {
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [inverted, setInverted] = useState(false);
 
-  const { ref: headerSentinelRef, inView: blackInView } = useInView({
-    threshold: 0,
-    rootMargin: "-80px 0px -100% 0px" // only trigger when header top overlaps section
-  });
-
-  const inverted = blackInView;
+  useEffect(() => {
+    const target = document.querySelector(".header-black-dynamic");
+    if (!target) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setInverted(entry.isIntersecting),
+      { threshold: 0, rootMargin: "-80px 0px -100% 0px" }
+    );
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <header className={`fixed z-50 mt-3 md:mt-5 left-0 right-0 mx-2 sm:mx-6 box-border transition-all duration-500 ease-out`}>
