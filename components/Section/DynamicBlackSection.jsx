@@ -3,6 +3,7 @@
 import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 import { LineShadowText } from "@/components/magicui/line-shadow-text";
 import { PortfolioMarquee } from "../marquees/PortfolioMarquee";
+import { Highlighter } from "../magicui/highlighter";
 
 const DynamicBlackSection = () => {
     return (
@@ -32,7 +33,7 @@ const DynamicBlackSection = () => {
                 </div>
                 <div className="flex flex-col gap-2 py-10 max-w-7xl mx-auto px-8 lg:px-0">
                     <span className="text-balance z-50 text-zinc-100 text-5xl font-semibold leading-none tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">Solution That Just <LineShadowText className="italic" shadowColor={"white"}>Works</LineShadowText>.</span>
-                    <span className="text-balance text-zinc-400 text-xl sm:text-2xl md:text-3xl lg:text-4xl">Companies choose Paradane to build their landing pages.</span>
+                    <span className="text-balance text-zinc-400 text-xl sm:text-2xl md:text-3xl lg:text-4xl">Companies choose <Highlighter action="underline" color="#00489c">Paradane</Highlighter> to build their landing pages.</span>
                 </div>
                 <PortfolioMarquee />
             </div>
