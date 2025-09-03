@@ -49,15 +49,7 @@ const Header = () => {
         <div className="hidden md:flex gap-10 items-center">
           <div className="flex gap-5 items-center">
             <LinkItem href="https://support.paradane.com/hc/faq/en/categories/legal">Legal</LinkItem>
-            <AnimatedSubscribeButton className={inverted ? "!text-white text-sm capitalize bg-zinc-700 border-zinc-700" : "text-zinc-800 bg-zinc-100"}>
-              <span className="group inline-flex items-center">
-                <BookerModal label="Schedule" />
-              </span>
-              <span className="group inline-flex items-center">
-                <CheckIcon className="mr-2 size-4" />
-                Schedule
-              </span>
-            </AnimatedSubscribeButton>
+            <LinkItem href="#"><BookerModal label="Schedule" /></LinkItem>
           </div>
         </div>
 
