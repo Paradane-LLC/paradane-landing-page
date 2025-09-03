@@ -55,7 +55,7 @@ const Header = () => {
               </span>
               <span className="group inline-flex items-center">
                 <CheckIcon className="mr-2 size-4" />
-                Scheduled
+                Schedule
               </span>
             </AnimatedSubscribeButton>
           </div>

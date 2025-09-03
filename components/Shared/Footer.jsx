@@ -78,7 +78,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-zinc-300 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center">
+        <div className="border-t border-zinc-300 pt-4 flex flex-col md:flex-row justify-between items-start md:items-center">
           <p className="text-zinc-800 text-sm mb-4 md:mb-0">© {currentYear} Paradane. All Rights Reserved.</p>
           <div className="flex gap-6">
             <Link href="https://support.paradane.com/hc/faq/articles/1756854342-terms-of-service" target="_blank" className="text-zinc-800 hover:text-zinc-100 transition-colors text-sm">Terms & Services</Link>

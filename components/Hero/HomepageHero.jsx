@@ -10,7 +10,7 @@ const HomepageHero = () => {
                 alt="Background hero image"
                 fill
                 className="object-cover -z-10 select-none"
-                quality={85}
+                quality={75}
             />
             
             {/* Overlay */}
