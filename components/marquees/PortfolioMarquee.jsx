@@ -98,7 +98,7 @@ const ScreenshotCard = ({
 export function PortfolioMarquee() {
   return (
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-      <Marquee className="[--duration:60s]" pauseOnHover>
+      <Marquee className="[--duration:60s]">
         {firstRow.map((screenshot) => (
           <ScreenshotCard key={screenshot.id} {...screenshot} />
         ))}

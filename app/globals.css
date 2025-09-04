@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 @layer utilities {
     .no-scrollbar::-webkit-scrollbar {
@@ -119,7 +119,7 @@
 }
 
 .dark {
-    --background: oklch(0.129 0.042 264.695);
+    --background: #18181b;
     --foreground: oklch(0.984 0.003 247.858);
     --card: oklch(0.208 0.042 265.755);
     --card-foreground: oklch(0.984 0.003 247.858);

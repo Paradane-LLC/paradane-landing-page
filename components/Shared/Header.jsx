@@ -20,18 +20,32 @@ const Header = () => {
   const [inverted, setInverted] = useState(false);
 
   useEffect(() => {
-    const target = document.querySelector(".header-black-dynamic");
-    if (!target) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => setInverted(entry.isIntersecting),
-      { threshold: 0, rootMargin: "-80px 0px -100% 0px" }
-    );
-    observer.observe(target);
-    return () => observer.disconnect();
+    const handleScroll = () => {
+      const trigger = document.getElementById("dynamic-black-trigger");
+      const header = document.getElementById("site-header");
+      if (!trigger || !header) return;
+
+      const triggerTop = trigger.getBoundingClientRect().top;
+      const headerHeight = header.offsetHeight || 80;
+
+      setInverted(triggerTop <= headerHeight);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+
+    // run on mount
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
   return (
-    <header className={`fixed z-[999] mt-3 md:mt-5 left-0 right-0 mx-2 sm:mx-6 box-border transition-all duration-500 ease-out`}>
+    <>
+      <header id="site-header" className={`fixed z-[999] mt-3 md:mt-5 left-0 right-0 mx-2 sm:mx-6 box-border transition-all duration-500 ease-out`}>
       <div className={`${inverted ? "bg-zinc-800 text-white border border-transparent" : "bg-white text-zinc-800 border border-[#00489c]/10"} max-w-7xl mx-auto text-sm backdrop-blur shadow-lg rounded-3xl px-4 sm:px-10 h-16 md:h-20 w-full flex items-center justify-between box-border ease-out transition-colors duration-500`}>
         <div className="flex items-center gap-10 ">
             <Link href="/" className="flex items-center justify-center relative w-28 md:w-32 h-12 flex-shrink-0">
@@ -103,6 +117,8 @@ const Header = () => {
         </div>
       )}
     </header>
+
+    </>
   );
 };
 
