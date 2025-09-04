@@ -21,14 +21,15 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const trigger = document.getElementById("dynamic-black-trigger");
+      const section = document.getElementById("dynamic-black-section");
       const header = document.getElementById("site-header");
-      if (!trigger || !header) return;
+      if (!section || !header) return;
 
-      const triggerTop = trigger.getBoundingClientRect().top;
+      const rect = section.getBoundingClientRect();
       const headerHeight = header.offsetHeight || 80;
 
-      setInverted(triggerTop <= headerHeight);
+      const insideSection = rect.top <= headerHeight && rect.bottom > headerHeight;
+      setInverted(insideSection);
     };
 
     window.addEventListener("scroll", handleScroll);

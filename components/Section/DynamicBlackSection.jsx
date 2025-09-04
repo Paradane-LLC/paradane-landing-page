@@ -20,7 +20,7 @@ const DynamicBlackSection = () => {
                 height={800}
                 />
             </div>
-            <div id="dynamic-black-trigger" className="relative min-h-screen bg-zinc-900 text-white">
+            <div id="dynamic-black-section" className="relative min-h-screen bg-zinc-900 text-white">
                 <div className="absolute top-0 left-0 right-0 h-[140px] w-full overflow-hidden">
                     <FlickeringGrid
                     className="absolute inset-0 z-0 size-full w-full"
