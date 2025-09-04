@@ -62,7 +62,7 @@ import { Highlighter } from "../magicui/highlighter";
   export function WhyUsGrid() {
     return (
         <div className="flex flex-col gap-5 lg:gap-10 py-10 max-w-7xl mx-auto px-8 lg:px-0">
-            <span className="text-balance z-50 text-zinc-100 font-bold leading-none tracking-tighter text-2xl sm:text-3xl md:text-4xl lg:text-5xl">What makes us <Highlighter color="#00489c">different</Highlighter>?</span>
+            <span className="text-balance z-50 text-zinc-100 font-bold leading-none tracking-tighter text-2xl sm:text-3xl md:text-4xl lg:text-5xl">What makes us <Highlighter color="#3f3f46">different</Highlighter>?</span>
             <BentoGrid className="lg:grid-rows-3 dark">
                 {features.map((feature) => (
                 <BentoCard className="" key={feature.name} {...feature} />
