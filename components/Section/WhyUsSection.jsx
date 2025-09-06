@@ -132,7 +132,21 @@ export function WhyUsSection() {
 
 
   return (
-    <div className="flex flex-col gap-5 lg:gap-10 py-10 max-w-7xl mx-auto px-8 lg:px-0">
+    <motion.div className="flex flex-col gap-5 lg:gap-10 py-10 max-w-7xl mx-auto px-8 lg:px-0"
+    animate={{
+      background: [
+        "radial-gradient(circle at center, rgba(0,255,200,0.2), transparent 70%)",
+        "radial-gradient(circle at center, rgba(255,0,200,0.2), transparent 70%)",
+        "radial-gradient(circle at center, rgba(0,200,255,0.2), transparent 70%)",
+        "radial-gradient(circle at center, rgba(255,200,0,0.2), transparent 70%)",
+        "radial-gradient(circle at center, rgba(138,43,226,0.2), transparent 70%)",
+        "radial-gradient(circle at center, rgba(0,255,127,0.2), transparent 70%)",
+        "radial-gradient(circle at center, rgba(255,105,180,0.2), transparent 70%)",
+        "radial-gradient(circle at center, rgba(30,144,255,0.2), transparent 70%)"
+      ]
+    }}
+    transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+    >
       {/* Header */}
       <span className="text-balance z-50 text-zinc-100 font-semibold leading-none tracking-tighter text-3xl md:text-4xl lg:text-5xl">
         Everything that matters to your{" "}
@@ -147,19 +161,6 @@ export function WhyUsSection() {
       >
         <motion.div
           className="absolute inset-0 z-0"
-          animate={{
-            background: [
-              "radial-gradient(circle at center, rgba(0,255,200,0.2), transparent 70%)",
-              "radial-gradient(circle at center, rgba(255,0,200,0.2), transparent 70%)",
-              "radial-gradient(circle at center, rgba(0,200,255,0.2), transparent 70%)",
-              "radial-gradient(circle at center, rgba(255,200,0,0.2), transparent 70%)",
-              "radial-gradient(circle at center, rgba(138,43,226,0.2), transparent 70%)",
-              "radial-gradient(circle at center, rgba(0,255,127,0.2), transparent 70%)",
-              "radial-gradient(circle at center, rgba(255,105,180,0.2), transparent 70%)",
-              "radial-gradient(circle at center, rgba(30,144,255,0.2), transparent 70%)"
-            ]
-          }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
         />
           {workFeatures.map((item) => (
             <motion.div
@@ -176,7 +177,7 @@ export function WhyUsSection() {
           ))}
       </motion.div>
 
-    </div>
+    </motion.div>
   );
 }
   
