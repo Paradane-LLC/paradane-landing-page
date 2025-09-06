@@ -46,7 +46,7 @@ const Header = () => {
 
   return (
     <>
-      <header id="site-header" className={`fixed z-[999] mt-3 md:mt-5 left-0 right-0 mx-2 sm:mx-6 box-border transition-all duration-500 ease-out`}>
+      <header id="site-header" className={`fixed z-[999] mt-3 md:mt-5 left-0 right-0 mx-6 box-border transition-all duration-500 ease-out`}>
       <div className={`${inverted ? "bg-zinc-800 text-white border border-transparent" : "bg-white text-zinc-800 border border-[#00489c]/10"} max-w-7xl mx-auto text-sm backdrop-blur shadow-lg rounded-full px-4 sm:px-10 h-16 md:h-20 w-full flex items-center justify-between box-border ease-out transition-colors duration-500`}>
         <div className="flex items-center gap-10 ">
             <Link href="/" className="flex items-center justify-center relative w-28 md:w-32 h-12 flex-shrink-0">

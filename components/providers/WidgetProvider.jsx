@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect } from 'react';
+import { getCalApi } from "@calcom/embed-react";
 
 function WidgetProvider() {
   useEffect(() => {
@@ -30,6 +31,12 @@ function WidgetProvider() {
 
     // Add a small delay to ensure DOM is ready
     const timer = setTimeout(loadAndInitChatbot, 1000);
+
+    // Preload Cal to improve BookerModal performance
+    (async function () {
+      const cal = await getCalApi({ namespace: "schedule-a-meeting", embedLibUrl: "https://schedule.paradane.com/embed/embed.js" });
+      cal("preload", { calLink: "team/sales/schedule-a-meeting" });
+    })();
 
     return () => {
       clearTimeout(timer);

@@ -27,6 +27,38 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Product",
+              "name": "Custom Software Development Company",
+              "url": "https://www.paradane.com",
+              "description":
+                "Paradane is a premium custom software development company with experience building innovative custom software solutions for businesses worldwide",
+              "brand": {
+                "@type": "Brand",
+                "name": "Paradane"
+              },
+              "review": {
+                "@type": "Review",
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "author": {
+                  "@type": "Organization",
+                  "name": "Clutch",
+                  "url": "https://clutch.co/profile/paradane"
+                }
+              }
+            })
+          }}
+        />
+      </head>
       <body
         className={`${firaSans.variable} ${firaMono.variable} antialiased`}
       >

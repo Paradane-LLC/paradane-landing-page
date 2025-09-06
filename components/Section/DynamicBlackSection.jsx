@@ -4,7 +4,7 @@ import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 import { LineShadowText } from "@/components/magicui/line-shadow-text";
 import { PortfolioMarquee } from "../marquees/PortfolioMarquee";
 import { Highlighter } from "../magicui/highlighter";
-import { WhyUsGrid } from "../grids/WhyUsGrid";
+import { WhyUsSection } from "./WhyUsSection";
 
 const DynamicBlackSection = () => {
     return (
@@ -37,7 +37,7 @@ const DynamicBlackSection = () => {
                     <span className="text-balance text-zinc-400 text-xl sm:text-2xl md:text-3xl lg:text-4xl">Companies choose <Highlighter action="underline" color="#3f3f46">Paradane</Highlighter> to build their platforms.</span>
                 </div>
                 <PortfolioMarquee />
-                <WhyUsGrid />
+                <WhyUsSection />
             </div>
         </div>
     )
