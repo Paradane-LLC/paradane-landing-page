@@ -15,12 +15,10 @@ import {
   Rocket,
   Bug,
   Globe,
-  PhoneCall,
-  Layers,
-  Handshake
+  PhoneCall
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { motion } from "framer-motion";
+
 
 const workFeatures = [
   {
@@ -117,7 +115,7 @@ const workFeatures = [
 
 function ListItem({label, description, icon: Icon}) {
   return (
-    <div className="relative flex flex-col gap-3 bg-zinc-800/50 shadow rounded-xl w-full transition-all ease-linear group p-5 lg:py-10">
+    <div className="relative flex flex-col gap-3 bg-zinc-800/75 lg:bg-zinc-800 border border-zinc-800 shadow rounded-xl w-full transition-all ease-linear group p-5 lg:py-10 lg:filter lg:saturate-75 lg:opacity-75 hover:lg:saturate-100 hover:lg:opacity-100 cursor-pointer">
       <div>
         <Icon className="text-zinc-300" size={40} />
       </div>
@@ -130,8 +128,8 @@ function ListItem({label, description, icon: Icon}) {
 }
   
 export function WhyUsSection() {
-  const [showMore, setShowMore] = useState(false);
-  const halfway = Math.ceil(workFeatures.length / 2);
+
+
 
   return (
     <div className="flex flex-col gap-5 lg:gap-10 py-10 max-w-7xl mx-auto px-8 lg:px-0">
@@ -145,31 +143,23 @@ export function WhyUsSection() {
       
       <motion.div
         layout
-        initial={{ height: "50vh" }}
-        animate={{ height: showMore ? "auto" : "50vh" }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 overflow-hidden relative"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 relative"
       >
-        {workFeatures.map((item) => (
-          <motion.div key={item.id} layout>
-            <ListItem label={item.label} description={item.description} icon={item.icon} />
-          </motion.div>
-        ))}
-        {!showMore && (
-          <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-zinc-900 to-transparent pointer-events-none" />
-        )}
+          {workFeatures.map((item) => (
+            <motion.div
+              key={item.id}
+              layout
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: "spring", stiffness: 300, damping: 15 }}
+            >
+              <ListItem label={item.label} description={item.description} icon={item.icon} />
+            </motion.div>
+          ))}
       </motion.div>
 
-      <div className="flex relative">
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.90 }}
-          onClick={() => setShowMore(!showMore)}
-          className="relative z-10 px-2 rounded-lg text-white text-lg font-semibold shadow-lg"
-        >
-          {showMore ? "Show Less" : "Show More"}
-        </motion.button>
-      </div>
     </div>
   );
 }

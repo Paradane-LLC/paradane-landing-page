@@ -5,6 +5,7 @@ import { LineShadowText } from "@/components/magicui/line-shadow-text";
 import { PortfolioMarquee } from "../marquees/PortfolioMarquee";
 import { Highlighter } from "../magicui/highlighter";
 import { WhyUsSection } from "./WhyUsSection";
+import ReviewSection from "./ReviewSection";
 
 const DynamicBlackSection = () => {
     return (
@@ -38,6 +39,28 @@ const DynamicBlackSection = () => {
                 </div>
                 <PortfolioMarquee />
                 <WhyUsSection />
+                <ReviewSection />
+                <div className="absolute bottom-0 left-0 right-0 h-[70px] lg:h-[140px] w-full overflow-hidden">
+                    <FlickeringGrid
+                    className="absolute inset-0 z-0 size-full w-full"
+                    squareSize={10}
+                    gridGap={10}
+                    color="#fff"
+                    maxOpacity={0.1}
+                    flickerChance={0.1}
+                    />
+                </div>
+            </div>
+            <div className="relative h-[50px] lg:h-[100px] w-full overflow-hidden bg-background z-40">
+                <FlickeringGrid
+                className="absolute inset-0 z-0 size-full w-full"
+                squareSize={10}
+                gridGap={10}
+                color="#18181b"
+                maxOpacity={0.1}
+                flickerChance={0.1}
+                height={800}
+                />
             </div>
         </div>
     )
