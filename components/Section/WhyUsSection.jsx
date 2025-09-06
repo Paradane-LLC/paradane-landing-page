@@ -115,7 +115,7 @@ const workFeatures = [
 
 function ListItem({label, description, icon: Icon}) {
   return (
-    <div className="relative flex flex-col gap-3 bg-zinc-800/75 lg:bg-zinc-800 border border-zinc-800 shadow rounded-xl w-full transition-all ease-linear group p-5 lg:py-10 lg:filter lg:saturate-75 lg:opacity-75 hover:lg:saturate-100 hover:lg:opacity-100 cursor-pointer">
+    <div className="relative flex flex-col gap-3 bg-zinc-900/75 backdrop-blur-md border border-zinc-800 shadow-lg rounded-xl w-full transition-all ease-linear group p-5 lg:py-10 cursor-pointer">
       <div>
         <Icon className="text-zinc-300" size={40} />
       </div>
@@ -145,6 +145,22 @@ export function WhyUsSection() {
         layout
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 relative"
       >
+        <motion.div
+          className="absolute inset-0 z-0"
+          animate={{
+            background: [
+              "radial-gradient(circle at center, rgba(0,255,200,0.2), transparent 70%)",
+              "radial-gradient(circle at center, rgba(255,0,200,0.2), transparent 70%)",
+              "radial-gradient(circle at center, rgba(0,200,255,0.2), transparent 70%)",
+              "radial-gradient(circle at center, rgba(255,200,0,0.2), transparent 70%)",
+              "radial-gradient(circle at center, rgba(138,43,226,0.2), transparent 70%)",
+              "radial-gradient(circle at center, rgba(0,255,127,0.2), transparent 70%)",
+              "radial-gradient(circle at center, rgba(255,105,180,0.2), transparent 70%)",
+              "radial-gradient(circle at center, rgba(30,144,255,0.2), transparent 70%)"
+            ]
+          }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        />
           {workFeatures.map((item) => (
             <motion.div
               key={item.id}
