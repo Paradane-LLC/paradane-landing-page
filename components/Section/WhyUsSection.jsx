@@ -79,7 +79,7 @@ const workFeatures = [
     id: 9,
     icon: Repeat,
     label: "Agile Process",
-    description: "We follow agile methodologies to adapt quickly to changes and deliver value continuously."
+    description: "We follow agile methodologies to adapt quickly to changes and deliver value."
   },
   {
     id: 10,
