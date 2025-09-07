@@ -3,13 +3,14 @@ import { Marquee } from "@/components/magicui/marquee";
 import { StarIcon } from "lucide-react";
 import { reviews } from "../data/reviews";
 import { UserIcon } from "lucide-react";
+import Image from "next/image";
 
 const ReviewCard = ({ review }) => {
     return (
         <div className="bg-zinc-800/75 lg:bg-zinc-800/50 text-zinc-100 rounded-xl shadow-lg p-6 w-96 flex-shrink-0">
             <div className="flex items-center gap-4">
                 {review.picture ? (
-                    <img
+                    <Image
                         src={review.picture}
                         alt={review.name}
                         className="w-14 h-14 object-cover rounded-full border border-zinc-700"
