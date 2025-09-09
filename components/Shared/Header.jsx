@@ -53,7 +53,7 @@ const Header = () => {
                 <Logo color={inverted ? '#fff' : '#00489c'} className="transition-colors duration-500 ease-out" />
             </Link>
             <div className="hidden sm:flex gap-5 items-center">
-                <LinkItem href="#">Services</LinkItem>
+                <LinkItem href="/Services">Services</LinkItem>
                 <LinkItem href="#">Portfolio</LinkItem>
                 <LinkItem href="#">Contact</LinkItem>
             </div>
