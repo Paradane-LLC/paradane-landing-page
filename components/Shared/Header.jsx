@@ -112,7 +112,7 @@ const Header = () => {
           <LinkItem href="#">Portfolio</LinkItem>
           <LinkItem href="#">Contact</LinkItem>
           <div className="border-t border-current pt-4 space-y-4">
-            <LinkItem href="https://support.paradane.com/hc/faq/en/categories/legal">Legal</LinkItem>
+            <LinkItem href="https://help.paradane.com/portal/en/kb/paradane-llc/legal">Legal</LinkItem>
             <LinkItem href="#"><BookerModal /></LinkItem>
           </div>
         </div>

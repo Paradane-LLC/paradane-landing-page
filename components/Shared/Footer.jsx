@@ -68,10 +68,10 @@ const Footer = () => {
             <div>
             <h3 className="text-zinc-800 font-semibold mb-4">Legal</h3>
                 <ul className="space-y-3">
-                    <li><Link href="https://support.paradane.com/hc/faq/articles/1756854216-age-verification-policy" target="_blank" className="text-zinc-800 hover:text-zinc-950 transition-colors text-sm">Age Verification Policy</Link></li>
-                    <li><Link href="https://support.paradane.com/hc/faq/articles/1756854242-cookies-policy" target="_blank" className="text-zinc-800 hover:text-zinc-950 transition-colors text-sm">Cookies Policy</Link></li>
-                    <li><Link href="https://support.paradane.com/hc/faq/articles/1756854278-community-guidelines" target="_blank" className="text-zinc-800 hover:text-zinc-950 transition-colors text-sm">Community Guidelines</Link></li>
-                    <li><Link href="https://support.paradane.com/hc/faq/articles/1756854301-disclaimer" target="_blank" className="text-zinc-800 hover:text-zinc-950 transitio  n-colors text-sm">Disclaimer</Link></li>
+                    <li><Link href="https://help.paradane.com/portal/en/kb/articles/age-verification-policy" target="_blank" className="text-zinc-800 hover:text-zinc-950 transition-colors text-sm">Age Verification Policy</Link></li>
+                    <li><Link href="https://help.paradane.com/portal/en/kb/articles/cookies-policy" target="_blank" className="text-zinc-800 hover:text-zinc-950 transition-colors text-sm">Cookies Policy</Link></li>
+                    <li><Link href="https://help.paradane.com/portal/en/kb/articles/community-guidelines" target="_blank" className="text-zinc-800 hover:text-zinc-950 transition-colors text-sm">Community Guidelines</Link></li>
+                    <li><Link href="https://help.paradane.com/portal/en/kb/articles/disclaimer" target="_blank" className="text-zinc-800 hover:text-zinc-950 transitio  n-colors text-sm">Disclaimer</Link></li>
                 </ul>
             </div>
 
@@ -81,8 +81,8 @@ const Footer = () => {
         <div className="border-t border-zinc-300 pt-4 flex flex-col md:flex-row justify-between items-start md:items-center">
           <p className="text-zinc-800 text-sm mb-4 md:mb-0">© {currentYear} Paradane LLC. All Rights Reserved.</p>
           <div className="flex gap-6">
-            <Link href="https://support.paradane.com/hc/faq/articles/1756854342-terms-of-service" target="_blank" className="text-zinc-800 hover:text-zinc-950 transition-colors text-sm">Terms & Services</Link>
-            <Link href="https://support.paradane.com/hc/faq/articles/1756854363-privacy-policy" target="_blank" className="text-zinc-800 hover:text-zinc-950 transition-colors text-sm">Privacy Policy</Link>
+            <Link href="https://help.paradane.com/portal/en/kb/articles/terms-services" target="_blank" className="text-zinc-800 hover:text-zinc-950 transition-colors text-sm">Terms & Services</Link>
+            <Link href="https://help.paradane.com/portal/en/kb/articles/privacy-policy" target="_blank" className="text-zinc-800 hover:text-zinc-950 transition-colors text-sm">Privacy Policy</Link>
           </div>
         </div>
       </div>
