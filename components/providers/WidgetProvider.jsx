@@ -12,7 +12,7 @@ function WidgetProvider() {
       script.defer = true;
       script.innerHTML = `
         window.ZOHOIM = window.ZOHOIM || function(a,b){ ZOHOIM[a] = b; };
-        window.ZOHOIM.prefilledMessage = "How may I help you?";
+        window.ZOHOIM.prefilledMessage = "Hello, I need some information.";
         (function(){
           var d=document;
           var s=d.createElement('script');
