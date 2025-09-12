@@ -5,29 +5,30 @@ import { getCalApi } from "@calcom/embed-react";
 
 function WidgetProvider() {
   useEffect(() => {
-    const loadAndInitZoho = () => {
-      // Add Zoho SalesIQ base script
-      const initScript = document.createElement("script");
-      initScript.type = "text/javascript";
-      initScript.innerHTML = `
-        window.$zoho = window.$zoho || {};
-        $zoho.salesiq = $zoho.salesiq || { ready: function(){} };
+    const loadAndInitZohoIM = () => {
+      // Create Zoho IM script
+      const script = document.createElement("script");
+      script.type = "text/javascript";
+      script.defer = true;
+      script.innerHTML = `
+        window.ZOHOIM = window.ZOHOIM || function(a,b){ ZOHOIM[a] = b; };
+        window.ZOHOIM.prefilledMessage = "How may I help you?";
+        (function(){
+          var d=document;
+          var s=d.createElement('script');
+          s.type='text/javascript';
+          s.defer=true;
+          s.src="https://im.zoho.com/api/v1/public/channel/043b407c8c4a59cc8dfda970247f43ad/widget";
+          d.getElementsByTagName('head')[0].appendChild(s);
+        })();
       `;
-      document.body.appendChild(initScript);
-
-      // Add Zoho SalesIQ widget script
-      const widgetScript = document.createElement("script");
-      widgetScript.id = "zsiqscript";
-      widgetScript.src =
-        "https://salesiq.zoho.com/widget?wc=siq91e7dcf61c306e68252976b50ff02d4083efb24b54f928ed0744132e2697f04e";
-      widgetScript.defer = true;
-      document.body.appendChild(widgetScript);
+      document.body.appendChild(script);
     };
 
-    // Add a small delay to ensure DOM is ready
-    const timer = setTimeout(loadAndInitZoho, 1000);
+    // Delay to ensure DOM is ready
+    const timer = setTimeout(loadAndInitZohoIM, 1000);
 
-    // Preload Cal to improve BookerModal performance
+    // Preload Cal.com Booker
     (async function () {
       const cal = await getCalApi({
         namespace: "schedule-a-meeting",
