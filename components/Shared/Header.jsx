@@ -61,7 +61,7 @@ const Header = () => {
 
         <div className="hidden md:flex gap-10 items-center">
           <div className="flex gap-5 items-center">
-            <LinkItem href="https://support.paradane.com/hc/faq/en/categories/legal">Legal</LinkItem>
+            <LinkItem href="https://help.paradane.com/portal/en/kb/paradane-llc/legal">Legal</LinkItem>
             <LinkItem href="#"><BookerModal label="Schedule" /></LinkItem>
           </div>
         </div>
