@@ -1,4 +1,3 @@
-import { headers } from "next/headers";
 import { Fira_Sans, Fira_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Shared/Header";
@@ -26,8 +25,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const nonce = headers().get("x-nonce");
-
   return (
     <html lang="en">
       <head>
@@ -68,7 +65,7 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <Footer />
-        <WidgetProvider nonce={nonce} />
+        <WidgetProvider />
       </body>
     </html>
   );
