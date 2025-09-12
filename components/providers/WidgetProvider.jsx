@@ -3,12 +3,11 @@
 import { useEffect } from "react";
 import { getCalApi } from "@calcom/embed-react";
 
-function WidgetProvider({ nonce }) {
+function WidgetProvider() {
   useEffect(() => {
     const script = document.createElement("script");
     script.type = "text/javascript";
     script.defer = true;
-    script.nonce = nonce; // ✅ apply nonce here
     script.src =
       "https://gc.zohopublic.com/org/899434323/flows/37206000000002163/embed/script";
     document.body.appendChild(script);
@@ -21,7 +20,7 @@ function WidgetProvider({ nonce }) {
       });
       cal("preload", { calLink: "team/sales/schedule-a-meeting" });
     })();
-  }, [nonce]);
+  }, []);
 
   return null;
 }
