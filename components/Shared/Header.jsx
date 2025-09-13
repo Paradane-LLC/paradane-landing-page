@@ -54,8 +54,8 @@ const Header = () => {
             </Link>
             <div className="hidden sm:flex gap-5 items-center">
                 {/* <LinkItem href="#">Services</LinkItem>
-                <LinkItem href="#">Portfolio</LinkItem>
-                <LinkItem href="#">Contact</LinkItem> */}
+                <LinkItem href="#">Portfolio</LinkItem> */}
+                <LinkItem href="https://blog.paradane.com">Blog</LinkItem>
             </div>
         </div>
 
