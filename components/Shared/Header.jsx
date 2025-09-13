@@ -53,16 +53,17 @@ const Header = () => {
                 <Logo color={inverted ? '#fff' : '#00489c'} className="transition-colors duration-500 ease-out" />
             </Link>
             <div className="hidden sm:flex gap-5 items-center">
-                {/* <LinkItem href="#">Services</LinkItem>
-                <LinkItem href="#">Portfolio</LinkItem> */}
-                <LinkItem href="https://blog.paradane.com">Blog</LinkItem>
+              <LinkItem href="https://paradane.com/services">Services</LinkItem>
+              <LinkItem href="https://paradane.com/portfolio">Portfolio</LinkItem>
+              <LinkItem href="https://blog.paradane.com">Blog</LinkItem>
             </div>
         </div>
 
         <div className="hidden md:flex gap-10 items-center">
           <div className="flex gap-5 items-center">
+            <LinkItem href="https://paradane.com/about">About</LinkItem>
+            <LinkItem href="https://paradane.com/contact">Contact</LinkItem>
             <LinkItem href="https://help.paradane.com/portal/en/kb/paradane-llc/legal">Legal</LinkItem>
-            <LinkItem href="#"><BookerModal label="Schedule" /></LinkItem>
           </div>
         </div>
 
@@ -112,8 +113,9 @@ const Header = () => {
           <LinkItem href="#">Portfolio</LinkItem>
           <LinkItem href="#">Contact</LinkItem>
           <div className="border-t border-current pt-4 space-y-4">
+            <LinkItem href="https://paradane.com/about">About</LinkItem>
+            <LinkItem href="https://paradane.com/contact">Contact</LinkItem>
             <LinkItem href="https://help.paradane.com/portal/en/kb/paradane-llc/legal">Legal</LinkItem>
-            <LinkItem href="#"><BookerModal /></LinkItem>
           </div>
         </div>
       )}
