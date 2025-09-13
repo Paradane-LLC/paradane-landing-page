@@ -170,7 +170,7 @@ export default function Services() {
                 <button className="p-3 bg-white text-[#00489c] font-bold rounded-2xl transition-transform hover:scale-105 hover:shadow-lg cursor-pointer">Get Started</button>
               </div>
             </div>
-            <div className="w-95 h-130 bg-white text-[#00489c] rounded-2xl shadow-lg flex flex-col items-center justify-center text-center p-6">
+            <div className="w-95 h-130 bg-white text-[#00489c] rounded-2xl shadow-lg flex flex-col items-center justify-center text-center p-6 border border-[#4e4b66]">
               <p className="text-xl font-semibold">PLACEHOLDER</p>
             </div>
           </div>
