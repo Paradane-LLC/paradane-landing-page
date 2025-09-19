@@ -1,5 +1,7 @@
 import React from "react";
 
+import { PhoneCall, MailIcon, PinIcon, MapPinIcon } from "lucide-react";
+
 function page() {
   return (
     <div className="min-h-screen bg-amber-500/40 flex items-center justify-center gap-5 flex-1">
@@ -12,9 +14,29 @@ function page() {
             services, pricing, or anything else, our team is ready to answer all
             your questions.
           </span>
-          <div>
-            
+          <div className="flex flex-row">
+            <PhoneCall
+              className="border-lg border-white"
+              size={35}
+              color="white"
+            />
+            <div>+1 (832) 859-7883</div>
           </div>
+          <div className="flex flex-row">
+            <MailIcon
+              className="border-lg border-white"
+              size={35}
+              color="white"
+            />
+          </div>
+          <div className="flex flex-row">
+            <MapPinIcon
+              className="border-lg border-white"
+              size={35}
+              color="white"
+            />
+          </div>
+          <div></div>
         </div>
         <div className="bg-amber-500 flex flex-col items-center justify-center gap-5 flex-1 mb-10">
           <h1 className="text-3xl">Make an Appointment</h1>
