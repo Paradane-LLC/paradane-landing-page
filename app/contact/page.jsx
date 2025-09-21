@@ -2,12 +2,13 @@
 import React, { useState } from "react";
 
 import Contactbg from "@/public/Contact-background";
-import { AsYouType } from "libphonenumber-js";
 
-import { Player } from "@lottiefiles/react-lottie-player";
+import { AsYouType } from "libphonenumber-js";
 import contactFormSent from "@/public/contact-form-sent.json";
 
 import { PhoneCall, MailIcon, MapPinIcon } from "lucide-react";
+
+import Lottie from "lottie-react";
 
 function page() {
   const [form, setForm] = useState({
@@ -126,74 +127,79 @@ function page() {
           <div></div>
         </div>
         <div className="bg-zinc-200 flex flex-col items-center justify-center p-5 gap-5 flex-1 mb-10 rounded-xl max-w-xl min-w-[320px] w-full mx-auto lg:max-w-lg">
-          <h1 className="text-3xl font-bold">MAKE APPOINTMENT</h1>
-          <form
-            className="flex flex-col gap-3 w-full px-10 mb-10"
-            onSubmit={handleSubmit}
-          >
-            <div className="flex flex-col gap-3 w-full">
-              <div className="justify-start font-bold">
-                <span>NAME</span>
-              </div>
-              <input
-                type="text"
-                placeholder="Name"
-                className="bg-white border border-gray-300 p-2 rounded placeholder-gray-400"
-              />
-              <span className="font-bold">EMAIL</span>
-              <input
-                type="text"
-                name="email"
-                placeholder="Email"
-                value={form.email}
-                onChange={handleChange}
-                className={`bg-white border p-2 rounded placeholder-gray-400 ${
-                  emailError ? "border-red-500" : "border-gray-300"
-                }`}
-                required
-              />
-              {emailError && (
-                <span className="text-red-500 text-sm">{emailError}</span>
-              )}
-              <span className="font-bold">PHONE</span>
-              <input
-                type="text"
-                name="phone"
-                placeholder="Phone"
-                value={form.phone}
-                onChange={handlePhoneChange}
-                className={`bg-white border p-2 pl-4 rounded placeholder-gray-400 ${
-                  phoneError ? "border-red-500" : "border-gray-300"
-                }`}
-                required
-              />
-              {phoneError && (
-                <span className="text-red-500 text-sm">{phoneError}</span>
-              )}
-              <span className="font-bold">MESSAGE</span>
-              <textarea
-                type="text"
-                placeholder="Write message..."
-                className="bg-white border border-gray-300 p-2 rounded placeholder-gray-400"
-              />
-              <button className="bg-blue-800 lg:w-30 text-white p-2 rounded-xl hover:bg-blue-700 transition-colors mt-5">
-                {loading ? "Submitting..." : "Submit"}
-              </button>
-            </div>
-            {submitted && (
+          <div className="w-full min-h-[520px] flex flex-col items-center justify-center">
+            {submitted ? (
               <div className="flex flex-col items-center mt-6">
-                <Player
-                  autoplay
+                <Lottie
+                  animationData={contactFormSent}
                   loop={false}
-                  src={contactFormSent}
-                  style={{ height: "120px", width: "120px" }}
+                  autoplay={true}
+                  style={{ height: 240, width: 240 }}
                 />
-                <span className="text-[#00489c] font-bold mt-2">
-                  Thank you! We'll be in touch. 😊
+                <span className="text-black font-semibold mt-2 text-2xl">
+                  Thank you! We'll be in touch.
                 </span>
               </div>
+            ) : (
+              <>
+                <h1 className="text-3xl font-bold">MAKE APPOINTMENT</h1>
+                <form
+                  className="flex flex-col gap-3 w-full px-10 mb-10"
+                  onSubmit={handleSubmit}
+                >
+                  <div className="flex flex-col gap-3 w-full">
+                    <div className="justify-start font-bold">
+                      <span>NAME</span>
+                    </div>
+                    <input
+                      type="text"
+                      placeholder="Name"
+                      className="bg-white border border-gray-300 p-2 rounded placeholder-gray-400"
+                    />
+                    <span className="font-bold">EMAIL</span>
+                    <input
+                      type="text"
+                      name="email"
+                      placeholder="Email"
+                      value={form.email}
+                      onChange={handleChange}
+                      className={`bg-white border p-2 rounded placeholder-gray-400 ${
+                        emailError ? "border-red-500" : "border-gray-300"
+                      }`}
+                      required
+                    />
+                    {emailError && (
+                      <span className="text-red-500 text-sm">{emailError}</span>
+                    )}
+                    <span className="font-bold">PHONE</span>
+                    <input
+                      type="text"
+                      name="phone"
+                      placeholder="Phone"
+                      value={form.phone}
+                      onChange={handlePhoneChange}
+                      className={`bg-white border p-2 pl-4 rounded placeholder-gray-400 ${
+                        phoneError ? "border-red-500" : "border-gray-300"
+                      }`}
+                      required
+                    />
+                    {phoneError && (
+                      <span className="text-red-500 text-sm">{phoneError}</span>
+                    )}
+                    <span className="font-bold">MESSAGE</span>
+                    <textarea
+                      type="text"
+                      placeholder="Write message..."
+                      className="bg-white border border-gray-300 p-2 rounded placeholder-gray-400"
+                    />
+                    <button className="bg-blue-800 lg:w-30 text-white p-2 rounded-xl hover:bg-blue-700 transition-colors mt-5">
+                      {loading ? "Submitting..." : "Submit"}
+                    </button>
+                  </div>
+                </form>
+              </>
             )}
-          </form>
+          </div>
         </div>
       </div>
     </div>
