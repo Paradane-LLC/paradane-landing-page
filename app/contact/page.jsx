@@ -12,9 +12,11 @@ import Lottie from "lottie-react";
 
 function page() {
   const [form, setForm] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
+    subject: "",
     message: "",
   });
 
@@ -50,7 +52,7 @@ function page() {
     return /^\(\d{3}\) \d{3}-\d{4}$/.test(phone);
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
 
@@ -59,7 +61,7 @@ function page() {
       setEmailError("Please enter a valid email address.");
       valid = false;
     }
-    if (!isValidPhone(form.phone)) {
+    if (form.phone && !isValidPhone(form.phone)) {
       setPhoneError("Please enter a valid US phone number.");
       valid = false;
     }
@@ -68,13 +70,41 @@ function page() {
       return;
     }
 
-    setTimeout(() => {
-      setLoading(false);
+    const formData = new FormData();
+    formData.append("xnQsjsdp", "edbsn5b028f776f6e54bc98ffba626d7ad149");
+    formData.append("xmIwtLD", "edbsn0cfb4561274e27144f1baf7fd49e2036e16766e121411230cf8098fd055ce5c2");
+    formData.append("xJdfEaS", "");
+    formData.append("actionType", "Q2FzZXM=");
+    formData.append("property(module)", "Cases");
+    formData.append("returnURL", "https://paradane.com/contact");
+    formData.append("First Name", form.firstName);
+    formData.append("Contact Name", form.lastName);
+    formData.append("Email", form.email);
+    formData.append("Phone", form.phone);
+    formData.append("Subject", form.subject);
+    formData.append("Description", form.message);
+
+    try {
+      await fetch("https://help.paradane.com/support/WebToCase", {
+        method: "POST",
+        mode: "no-cors",
+        body: formData,
+      });
       setSubmitted(true);
-      setForm({ name: "", email: "", phone: "", message: "" });
-      setEmailError("");
-      setPhoneError("");
-    }, 1000);
+      setForm({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("There was an error submitting the form. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -93,7 +123,7 @@ function page() {
             We'd love to hear from you! Whether you have a question about our
             services, pricing, or anything else. We will respond within 24 hours
             of receiving your message. Or give us a call and reach us
-            immediately for a chat. If we are unnavailable we will call back
+            immediately for a chat. If we are unavailable we will call back
             same day.
           </span>
           <div className="flex flex-row">
@@ -149,11 +179,26 @@ function page() {
                 >
                   <div className="flex flex-col gap-3 w-full">
                     <div className="justify-start font-bold">
-                      <span>NAME</span>
+                      <span>FIRST NAME</span>
                     </div>
                     <input
                       type="text"
-                      placeholder="Name"
+                      name="firstName"
+                      value={form.firstName}
+                      onChange={handleChange}
+                      placeholder="First Name"
+                      className="bg-white border border-gray-300 p-2 rounded placeholder-gray-400"
+                      required
+                    />
+                    <div className="justify-start font-bold">
+                      <span>LAST NAME</span>
+                    </div>
+                    <input
+                      type="text"
+                      name="lastName"
+                      value={form.lastName}
+                      onChange={handleChange}
+                      placeholder="Last Name"
                       className="bg-white border border-gray-300 p-2 rounded placeholder-gray-400"
                     />
                     <span className="font-bold">EMAIL</span>
@@ -181,18 +226,35 @@ function page() {
                       className={`bg-white border p-2 pl-4 rounded placeholder-gray-400 ${
                         phoneError ? "border-red-500" : "border-gray-300"
                       }`}
-                      required
                     />
                     {phoneError && (
                       <span className="text-red-500 text-sm">{phoneError}</span>
                     )}
+                    <span className="font-bold">SUBJECT</span>
+                    <input
+                      type="text"
+                      name="subject"
+                      value={form.subject}
+                      onChange={handleChange}
+                      placeholder="Subject"
+                      className="bg-white border border-gray-300 p-2 rounded placeholder-gray-400"
+                      required
+                    />
                     <span className="font-bold">MESSAGE</span>
                     <textarea
                       type="text"
+                      name="message"
+                      value={form.message}
+                      onChange={handleChange}
                       placeholder="Write message..."
                       className="bg-white border border-gray-300 p-2 rounded placeholder-gray-400"
+                      required
                     />
-                    <button className="bg-blue-800 lg:w-30 text-white p-2 rounded-xl hover:bg-blue-700 transition-colors mt-5">
+                    <button
+                      type="submit"
+                      className="bg-blue-800 lg:w-30 text-white p-2 rounded-xl hover:bg-blue-700 transition-colors mt-5"
+                      disabled={loading}
+                    >
                       {loading ? "Submitting..." : "Submit"}
                     </button>
                   </div>
