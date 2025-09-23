@@ -53,16 +53,17 @@ const Header = () => {
                 <Logo color={inverted ? '#fff' : '#00489c'} className="transition-colors duration-500 ease-out" />
             </Link>
             <div className="hidden sm:flex gap-5 items-center">
-                <LinkItem href="/services">Services</LinkItem>
-                <LinkItem href="#">Portfolio</LinkItem>
-                <LinkItem href="#">Contact</LinkItem>
+              <LinkItem href="https://paradane.com/services">Services</LinkItem>
+              <LinkItem href="https://paradane.com/portfolio">Portfolio</LinkItem>
+              <LinkItem href="https://blog.paradane.com">Blog</LinkItem>
             </div>
         </div>
 
         <div className="hidden md:flex gap-10 items-center">
           <div className="flex gap-5 items-center">
-            <LinkItem href="https://support.paradane.com/hc/faq/en/categories/legal">Legal</LinkItem>
-            <LinkItem href="#"><BookerModal label="Schedule" /></LinkItem>
+            <LinkItem href="https://paradane.com/about">About</LinkItem>
+            <LinkItem href="https://paradane.com/contact">Contact</LinkItem>
+            <LinkItem href="https://help.paradane.com/portal/en/kb/paradane-llc/legal">Legal</LinkItem>
           </div>
         </div>
 
@@ -110,10 +111,11 @@ const Header = () => {
         <div className={`${inverted ? "bg-zinc-800 text-white border-white" : "bg-white text-zinc-800 border-zinc-200"} md:hidden mt-2 rounded-2xl shadow-lg p-5 space-y-4 text-sm max-w-7xl mx-auto`}>
           <LinkItem href="#">Services</LinkItem>
           <LinkItem href="#">Portfolio</LinkItem>
-          <LinkItem href="#">Contact</LinkItem>
+          <LinkItem href="/contact">Contact</LinkItem>
           <div className="border-t border-current pt-4 space-y-4">
-            <LinkItem href="https://support.paradane.com/hc/faq/en/categories/legal">Legal</LinkItem>
-            <LinkItem href="#"><BookerModal /></LinkItem>
+            <LinkItem href="https://paradane.com/about">About</LinkItem>
+            <LinkItem href="https://paradane.com/contact">Contact</LinkItem>
+            <LinkItem href="https://help.paradane.com/portal/en/kb/paradane-llc/legal">Legal</LinkItem>
           </div>
         </div>
       )}

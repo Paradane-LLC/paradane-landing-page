@@ -20,7 +20,7 @@ const Footer = () => {
             </div>
             {/* Social Links */}
             <div className="flex gap-4">
-              <Link href="#" className="w-5 h-5 flex items-center justify-center transition-colors">
+              <Link href="https://x.com/ParadaneLLC" target="_blank" className="w-5 h-5 flex items-center justify-center transition-colors">
                 <svg className="text-zinc-800" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                 </svg>
@@ -68,10 +68,10 @@ const Footer = () => {
             <div>
             <h3 className="text-zinc-800 font-semibold mb-4">Legal</h3>
                 <ul className="space-y-3">
-                    <li><Link href="https://support.paradane.com/hc/faq/articles/1756854216-age-verification-policy" target="_blank" className="text-zinc-800 hover:text-zinc-950 transition-colors text-sm">Age Verification Policy</Link></li>
-                    <li><Link href="https://support.paradane.com/hc/faq/articles/1756854242-cookies-policy" target="_blank" className="text-zinc-800 hover:text-zinc-950 transition-colors text-sm">Cookies Policy</Link></li>
-                    <li><Link href="https://support.paradane.com/hc/faq/articles/1756854278-community-guidelines" target="_blank" className="text-zinc-800 hover:text-zinc-950 transition-colors text-sm">Community Guidelines</Link></li>
-                    <li><Link href="https://support.paradane.com/hc/faq/articles/1756854301-disclaimer" target="_blank" className="text-zinc-800 hover:text-zinc-950 transitio  n-colors text-sm">Disclaimer</Link></li>
+                    <li><Link href="https://help.paradane.com/portal/en/kb/articles/age-verification-policy" target="_blank" className="text-zinc-800 hover:text-zinc-950 transition-colors text-sm">Age Verification Policy</Link></li>
+                    <li><Link href="https://help.paradane.com/portal/en/kb/articles/cookies-policy" target="_blank" className="text-zinc-800 hover:text-zinc-950 transition-colors text-sm">Cookies Policy</Link></li>
+                    <li><Link href="https://help.paradane.com/portal/en/kb/articles/community-guidelines" target="_blank" className="text-zinc-800 hover:text-zinc-950 transition-colors text-sm">Community Guidelines</Link></li>
+                    <li><Link href="https://help.paradane.com/portal/en/kb/articles/disclaimer" target="_blank" className="text-zinc-800 hover:text-zinc-950 transitio  n-colors text-sm">Disclaimer</Link></li>
                 </ul>
             </div>
 
@@ -81,8 +81,8 @@ const Footer = () => {
         <div className="border-t border-zinc-300 pt-4 flex flex-col md:flex-row justify-between items-start md:items-center">
           <p className="text-zinc-800 text-sm mb-4 md:mb-0">© {currentYear} Paradane LLC. All Rights Reserved.</p>
           <div className="flex gap-6">
-            <Link href="https://support.paradane.com/hc/faq/articles/1756854342-terms-of-service" target="_blank" className="text-zinc-800 hover:text-zinc-950 transition-colors text-sm">Terms & Services</Link>
-            <Link href="https://support.paradane.com/hc/faq/articles/1756854363-privacy-policy" target="_blank" className="text-zinc-800 hover:text-zinc-950 transition-colors text-sm">Privacy Policy</Link>
+            <Link href="https://help.paradane.com/portal/en/kb/articles/terms-services" target="_blank" className="text-zinc-800 hover:text-zinc-950 transition-colors text-sm">Terms & Services</Link>
+            <Link href="https://help.paradane.com/portal/en/kb/articles/privacy-policy" target="_blank" className="text-zinc-800 hover:text-zinc-950 transition-colors text-sm">Privacy Policy</Link>
           </div>
         </div>
       </div>

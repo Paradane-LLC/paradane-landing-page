@@ -1,4 +1,5 @@
 import { Fira_Sans, Fira_Mono } from "next/font/google";
+import { GoogleAnalytics } from '@next/third-parties/google'
 import "./globals.css";
 import Header from "@/components/Shared/Header";
 import WidgetProvider from "@/components/providers/WidgetProvider";
@@ -66,6 +67,7 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
         <WidgetProvider />
+        <GoogleAnalytics gaId="G-1E8XGKCS01" />
       </body>
     </html>
   );
