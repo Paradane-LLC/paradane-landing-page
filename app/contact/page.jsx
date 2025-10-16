@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import Contactbg from "@/public/Contact-background";
 
 import { AsYouType } from "libphonenumber-js";
-import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input'
+import "react-phone-number-input/style.css";
+import PhoneInput from "react-phone-number-input";
 
 import contactFormSent from "@/public/contact-form-sent.json";
 
@@ -47,7 +47,7 @@ function page() {
 
   function handlePhoneChange(e) {
     const digitsOnly = e.target.value.replace(/\D/g, "").slice(0, 10);
-    
+
     let formattedValue = "";
     if (digitsOnly.length === 0) {
       formattedValue = "";
@@ -248,7 +248,7 @@ function page() {
                     </div>
                     <div className="flex flex-col w-full">
                       <span className="font-bold">PHONE</span>
-                      <input
+                      {/* <input
                         type="text"
                         name="phone"
                         placeholder="Phone"
@@ -257,6 +257,13 @@ function page() {
                         className={`bg-white border p-2 pl-4 rounded placeholder-gray-400 ${
                           phoneError ? "border-red-500" : "border-gray-300"
                         }`}
+                      /> */}
+                      <PhoneInput
+                        international
+                        defaultCountry="US"
+                        value={form.phone}
+                        onChange={(value) => setForm({ ...form, phone: value })}
+                        className="bg-white border border-gray-300 p-2 rounded w-full"
                       />
                       {phoneError && (
                         <span className="text-red-500 text-sm">
