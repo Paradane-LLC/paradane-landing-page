@@ -3,12 +3,12 @@ import React from "react";
 function page() {
   return (
     <div className="relative min-h-screen bg-white/10">
-      <Image
+      {/* <Image
         src="/services-background.svg"
         alt="Background hero image"
         fill
         className="-z-10 select-none"
-      />
+      /> */}
       <div className="relative z-10 flex flex-col items-center text-[#00489c] py-16 px-4">
         <h2 className="text-3xl text-left font-bold ml-4 mb-4">
           Our Pricing Models
