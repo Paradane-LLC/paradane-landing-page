@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Lottie from "lottie-react";
 import { useRef, useEffect } from "react";
+import { Monitor, Share2, Palette, Search } from "lucide-react";
 
 // import {
 //   CheckCheckIcon,
@@ -56,7 +57,7 @@ export default function Services() {
         seoRef.current.playSegments([0, 60], true);
       }
       if (uiuxLottieRef.current) {
-        uiuxLottieRef.current.playSegments([0, 180], true); 
+        uiuxLottieRef.current.playSegments([0, 180], true);
       }
     }, 100);
 
@@ -72,7 +73,7 @@ export default function Services() {
 
   return (
     <>
-<div className="relative min-h-screen bg-zinc-200/40 flex sm:flex-col flex-row items-left justify-center px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40">
+      <div className="relative min-h-screen bg-zinc-200/40 flex sm:flex-col flex-row items-left justify-center px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40">
         <div className="height: 100vh width: 100vw ">
           <Lottie
             lottieRef={getLottieRef("hero-animation")}
@@ -106,7 +107,7 @@ export default function Services() {
         </div>
       </div>
 
-      <div className="min-h-screen bg-zinc-300/40">
+      {/* <div className="min-h-screen bg-zinc-300/40">
         <div ref={uiuxSectionRef} className="flex flex-row gap-8 p-8">
           <div className="bg-[#00489c]/10 p-4 rounded-2xl">
             <Lottie
@@ -119,7 +120,6 @@ export default function Services() {
             />
           </div>
 
-          
           <div className="p-4 rounded-2xl">
             <h1 className="text-5xl font-bold">UI/UX Design</h1>
             <p className="text-lg mt-4 max-w-2xl text-left">
@@ -313,15 +313,16 @@ export default function Services() {
               + more traffic than organic social media.
             </li>
             <li className="mt-5 ml-10">
-              Leads from SEO have a               <GlowingText
+              Leads from SEO have a{" "}
+              <GlowingText
                 className="inline-block"
                 text="14.6% "
                 tcolor="green-500"
                 tsize="lg"
                 time="2s"
                 tshadow="#b2deb5"
-              /> close rate, compared to just 1.7% for
-              outbound methods.
+              />{" "}
+              close rate, compared to just 1.7% for outbound methods.
             </li>
           </div>
           <div className="bg-[#00489c]/10 p-4 rounded-2xl">
@@ -335,8 +336,90 @@ export default function Services() {
             />
           </div>
         </div>
-      </div>
+      </div> */}
 
+      {/* Optional different section for services */}
+      
+      <div className="bg-[#eeeeef] grid grid-cols-1 md:grid-cols-3 gap-4 px-5 mt-5">
+        <div className="md:col-span-2 text-black p-4">
+          <span className="text-zinc-400 text-xs">OUR CAPABILITIES</span>{" "}
+          <br></br>
+          <h1 className="text-black text-3xl">
+            <b>View Our Services.</b>
+          </h1>
+          <p className="mt-5 text-sm">
+            At Paradane, we combine creativity, strategy, and technology to help
+            your business stand out online. Our team delivers end-to-end digital
+            solutions ranging from designing sleek, user-friendly interfaces to
+            building robust websites, optimizing search visibility, and driving
+            meaningful engagement through social media. Whether you’re looking
+            to establish your online presence or elevate an existing brand, our
+            services are designed to help you connect with your audience and
+            achieve measurable results.
+          </p>
+        </div>
+
+        <div className=" text-black p-4 mt-5 h-80 border-2 border-zinc-300 rounded-lg flex flex-col justify-between hover:bg-[#00489c] transition-colors hover:text-white">
+          <div>
+            <Palette size={35} className="p-1 inline-block mr-2 bg-[#00489c] rounded-xl text-white" />
+            <div className="mt-5 text-3xl">
+              <b>UI/UX Design</b>
+            </div>
+          </div>
+
+          <p className="text-sm">
+            Our UI/UX design services focus on creating intuitive and engaging
+            user experiences that drive customer satisfaction and loyalty. We
+            leverage the latest design trends and user research to craft
+            visually appealing and highly functional interfaces.
+          </p>
+        </div>
+      
+        <div className=" text-black p-4 mt-5 h-80 border-2 border-zinc-300 rounded-lg flex flex-col justify-between hover:bg-[#00489c] transition-colors hover:text-white">
+          <div>
+            <Share2 size={35} className="p-1 inline-block mr-2 bg-[#00489c] rounded-xl text-white" />
+            <div className="text-3xl mt-5">
+              <b>Social Media Marketing</b>
+            </div>
+          </div>
+
+          <p className="text-sm">
+            Boost your brand presence with our targeted campaigns that drive
+            engagement, sales and growth. We create strategies that connect you
+            with the right audience.
+          </p>
+        </div>
+
+        <div className=" text-black p-4 mt-5 h-80 border-2 border-zinc-300 rounded-lg flex flex-col justify-between hover:bg-[#00489c] transition-colors hover:text-white">
+          <div>
+            <Monitor size={35} className=" p-1 inline-block mr-2 bg-[#00489c] rounded-xl text-white" />
+            <div className="text-3xl mt-5">
+              <b>Web Development</b>
+            </div>
+          </div>
+
+          <p className="text-sm">
+            We build fast, secure, and scalable websites tailored to your
+            business needs. From simple landing pages to complex platforms, we
+            deliver seamless experiences.
+          </p>
+        </div>
+
+        <div className=" text-black p-4 mt-5 h-80 border-2 border-zinc-300 rounded-lg flex flex-col justify-between hover:bg-[#00489c] transition-colors hover:text-white mb-10">
+          <div>
+            <Search size={35} className="p-1 inline-block mr-2 bg-[#00489c] rounded-xl text-white" />
+            <div className="text-3xl mt-5">
+              <b>Search Engine Optimization (SEO)</b>
+            </div>
+          </div>
+
+          <p className="text-sm">
+            Rank higher on Search Engines, get noticed, and grow organically
+            with smart SEO strategies. Our approach ensures long-term visibility
+            and measurable business results.
+          </p>
+        </div>
+      </div>
     </>
   );
 }
