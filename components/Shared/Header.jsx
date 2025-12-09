@@ -4,11 +4,14 @@ import { useState, useEffect } from "react";
 import BookerModal from "./BookerModal";
 import Logo from "./Logo";
 
-const LinkItem = ({ href, children }) => {
+const LinkItem = ({ href, children, setMenuOpen }) => {
   return (
     <Link
        className="hover:scale-105 transition-colors duration-500 ease-out block"
        href={href}
+       onClick={() => {
+        if (setMenuOpen) setMenuOpen(false);
+       }}
      >
       {children}
     </Link>
@@ -109,9 +112,9 @@ const Header = () => {
 
       {menuOpen && (
         <div className={`${inverted ? "bg-zinc-800 text-white border-white" : "bg-white text-zinc-800 border-zinc-200"} md:hidden mt-2 rounded-2xl shadow-lg p-5 space-y-4 text-sm max-w-7xl mx-auto`}>
-          <LinkItem href="#">Services</LinkItem>
+          <LinkItem href="https://paradane.com/services">Services</LinkItem>
           <LinkItem href="#">Portfolio</LinkItem>
-          <LinkItem href="/contact">Contact</LinkItem>
+          <LinkItem href="https://paradane.com/contact">Contact</LinkItem>
           <div className="border-t border-current pt-4 space-y-4">
             <LinkItem href="https://paradane.com/about">About</LinkItem>
             <LinkItem href="https://paradane.com/contact">Contact</LinkItem>
