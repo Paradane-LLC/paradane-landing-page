@@ -35,8 +35,15 @@ const Header = () => {
       setInverted(insideSection);
     };
 
+    const handleRouteChange = () => {
+      setInverted(false);
+      setMenuOpen(false);
+    };
+
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleScroll);
+
+    window.addEventListener("popstate", handleRouteChange)
 
     // run on mount
     handleScroll();
@@ -44,6 +51,7 @@ const Header = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
+      window.removeEventListener("popstate", handleRouteChange);
     };
   }, []);
 
@@ -112,13 +120,13 @@ const Header = () => {
 
       {menuOpen && (
         <div className={`${inverted ? "bg-zinc-800 text-white border-white" : "bg-white text-zinc-800 border-zinc-200"} md:hidden mt-2 rounded-2xl shadow-lg p-5 space-y-4 text-sm max-w-7xl mx-auto`}>
-          <LinkItem href="https://paradane.com/services">Services</LinkItem>
-          <LinkItem href="#">Portfolio</LinkItem>
-          <LinkItem href="https://paradane.com/contact">Contact</LinkItem>
+          <LinkItem href="https://paradane.com/services" setMenuOpen={setMenuOpen}>Services</LinkItem>
+          <LinkItem href="#" setMenuOpen={setMenuOpen}>Portfolio</LinkItem>
+          <LinkItem href="https://paradane.com/contact" setMenuOpen={setMenuOpen}>Contact</LinkItem>
           <div className="border-t border-current pt-4 space-y-4">
-            <LinkItem href="https://paradane.com/about">About</LinkItem>
-            <LinkItem href="https://paradane.com/contact">Contact</LinkItem>
-            <LinkItem href="https://help.paradane.com/portal/en/kb/paradane-llc/legal">Legal</LinkItem>
+            <LinkItem href="https://paradane.com/about" setMenuOpen={setMenuOpen}>About</LinkItem>
+            <LinkItem href="https://paradane.com/contact" setMenuOpen={setMenuOpen}>Contact</LinkItem>
+            <LinkItem href="https://help.paradane.com/portal/en/kb/paradane-llc/legal" setMenuOpen={setMenuOpen}>Legal</LinkItem>
           </div>
         </div>
       )}
